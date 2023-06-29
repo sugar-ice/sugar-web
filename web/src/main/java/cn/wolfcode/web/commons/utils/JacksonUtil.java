@@ -38,7 +38,7 @@ public class JacksonUtil {
      *
      * @param obj
      * @return
-     * @see com.nebula.web.JacksonUtilTest.objToJsonStr()
+     * @see cn.wolfcode.web.JacksonUtilTest.objToJsonStr()
      */
     public String objToJsonStr(Object obj) {
         if (obj == null) {
@@ -58,7 +58,7 @@ public class JacksonUtil {
      * @param jsonStr JSON格式字符串
      * @param clazz 对象类型
      * @return
-     * @see com.nebula.web.JacksonUtilTest.jsonStrToBean()
+     * @see cn.wolfcode.web.JacksonUtilTest.jsonStrToBean()
      */
     public <T> T jsonStrToBean(String jsonStr, Class<T> clazz) {
         if (StringUtils.isEmpty(jsonStr) || Objects.isNull(clazz)) {
@@ -79,7 +79,7 @@ public class JacksonUtil {
      * @param collectionClass 集合类型
      * @param elementClass 元素类型
      * @return
-     * @see com.nebula.web.JacksonUtilTest.jsonStrToCollection()
+     * @see cn.wolfcode.web.JacksonUtilTest.jsonStrToCollection()
      */
     public <T> T jsonStrToCollection(String jsonStr, Class<? extends Collection> collectionClass, Class<?> elementClass) {
         if (StringUtils.isEmpty(jsonStr) || Objects.isNull(collectionClass) || Objects.isNull(elementClass)) {
@@ -102,7 +102,7 @@ public class JacksonUtil {
      * @param jsonStr JSON格式字符串
      * @param typeReference 对象的包装参考类型
      * @return
-     * @see com.nebula.web.JacksonUtilTest.jsonStrToObj()
+     * @see cn.wolfcode.web.JacksonUtilTest.jsonStrToObj()
      */
     public <T> T jsonStrToObj(String jsonStr, TypeReference<T> typeReference) {
         if (StringUtils.isEmpty(jsonStr) || Objects.isNull(typeReference)) {

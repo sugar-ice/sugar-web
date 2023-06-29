@@ -168,7 +168,7 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">包名</label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="packageName" value="com.nebula.web.modules" lay-verify="info" placeholder="请输入info"
+                                    <input type="text" name="packageName" value="cn.wolfcode.web.modules" lay-verify="info" placeholder="请输入info"
                                            autocomplete="off" class="layui-input">
                                 </div>
                             </div>

@@ -9,7 +9,7 @@
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.nebula</groupId>
+    <groupId>cn.wolfcode</groupId>
     <artifactId>parent</artifactId>
     <version>2.0-SNAPSHOT</version>
     <name>parent</name>

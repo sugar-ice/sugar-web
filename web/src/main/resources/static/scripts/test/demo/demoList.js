@@ -23,6 +23,7 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             {field: 'name', title: '名称', minWidth: 100, align: "center"},
             {field: 'info', title: '描述', minWidth: 100, align: "center"},
             {field: 'createTime', title: '创建时间', minWidth: 100, align: "center"},
+            {field: 'age', title: '年龄', minWidth: 100, align: "center"},
             {title: '操作', width: 160, templet: '#demoList-editBar', fixed: "right", align: "center"}
         ]],
     });
