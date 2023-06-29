@@ -20,17 +20,27 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         id: "ListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-                    {field: 'id', title:  'id', minWidth: 100, align: "center"},
-                    {field: 'customerName', title: '客户', minWidth: 100, align: "center"},
-                    {field: 'linkman', title: '联系人名字', minWidth: 100, align: "center"},
-                    {field: 'sex', title: '性别', minWidth: 100, align: "center"},
-                    {field: 'age', title: '年龄', minWidth: 100, align: "center"},
-                    {field: 'phone', title: '联系人电话', minWidth: 100, align: "center"},
-                    {field: 'position', title: '职位', minWidth: 100, align: "center"},
-                    {field: 'department', title: '部门', minWidth: 100, align: "center"},
-                    {field: 'remark', title: '备注信息', minWidth: 100, align: "center"},
-                    {field: 'inputUser', title: '录入人', minWidth: 100, align: "center"},
-                    {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
+            {field: 'id', title: 'id', minWidth: 100, align: "center"},
+            {field: 'customerName', title: '客户', minWidth: 100, align: "center"},
+            {field: 'linkman', title: '联系人名字', minWidth: 100, align: "center"},
+            {
+                field: 'sex', title: '性别', minWidth: 100, align: "center", templet: function (customer) {
+                    if (customer.sex == '0') {
+                        return "女";
+                    } else if (customer.sex == '1') {
+                        return "男";
+                    } else {
+                        return "未知";
+                    }
+                }
+            },
+            {field: 'age', title: '年龄', minWidth: 100, align: "center"},
+            {field: 'phone', title: '联系人电话', minWidth: 100, align: "center"},
+            {field: 'position', title: '职位', minWidth: 100, align: "center"},
+            {field: 'department', title: '部门', minWidth: 100, align: "center"},
+            {field: 'remark', title: '备注信息', minWidth: 100, align: "center"},
+            {field: 'username', title: '录入人', minWidth: 100, align: "center"},
+            {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
 
             {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
@@ -131,7 +141,8 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 }, function () {
                 });
                 break;
-        };
+        }
+        ;
     });
 
     $(window).resize(function () {

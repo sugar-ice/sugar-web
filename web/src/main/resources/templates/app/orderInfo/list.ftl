@@ -22,7 +22,7 @@
 
                     <!-- 搜索条件start -->
                     <form class="layui-form layui-card-header layuiadmin-card-header-auto"
-                         id="searchForm">
+                          id="searchForm">
                         <div class="layui-form-item">
                             <div class="layui-inline">
                                 <label class="layui-form-label">参数</label>
@@ -60,6 +60,10 @@
                     </script>
 
                     <script type="text/html" id="List-editBar">
+                        <@sec.authenticate grants="app:tbContract:update">
+                            <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="ship"><i
+                                        class="layui-icon">&#xe642;</i>发货</a>
+                        </@sec.authenticate>
                         <@sec.authenticate grants="app:orderInfo:update">
                             <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="update"><i
                                         class="layui-icon">&#xe642;</i>修改</a>

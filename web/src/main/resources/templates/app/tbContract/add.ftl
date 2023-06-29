@@ -20,63 +20,79 @@
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">客户</label>
+                    <label class="layui-form-label">客户</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="custId"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="custId" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">合同名称</label>
+                    <label class="layui-form-label">合同名称</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="contractName"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="contractName" placeholder="请输入" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">合同编码</label>
+                    <label class="layui-form-label">合同编码</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="contractCode"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="contractCode" placeholder="请输入" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">合同金额</label>
+                    <label class="layui-form-label">合同金额</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="amounts"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="amounts" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">合同生效开始时间</label>
+                    <label class="layui-form-label">合同生效开始时间</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="startDate"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="startDate" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">合同生效结束时间</label>
+                    <label class="layui-form-label">合同生效结束时间</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="endDate"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="endDate" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">合同内容</label>
+                    <label class="layui-form-label">合同内容</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="content"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="content" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">是否盖章确认 0 否 1 是</label>
+                    <label class="layui-form-label">是否盖章确认</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="affixSealStatus"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="affixSealStatus" placeholder="请输入" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                    <div class="layui-input-block">
+                        <select name="affixSealStatus">
+                            <option value="1">是</option>
+                            <option value="0">否</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">审核状态 0 未审核 1 审核通过 -1 审核不通过</label>
+                    <label class="layui-form-label">审核状态</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="auditStatus"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <select name="auditStatus">
+                            <option value="0">未审核</option>
+                            <option value="1">审核通过</option>
+                            <option value="-1">审核不通过</option>
+                        </select>
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">是否作废 1 作废 0 在用</label>
+                    <label class="layui-form-label">是否作废</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="nullifyStatus"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <select name="nullifyStatus">
+                            <option value="0">在用</option>
+                            <option value="1">作废</option>
+                        </select>
                     </div>
                 </div>
             </div>

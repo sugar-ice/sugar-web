@@ -19,17 +19,23 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         toolbar: '#List-toolbar',
         id: "ListTable",
         cols: [[
-            {type: "checkbox", fixed: "left", width: 50},
-                    {field: 'id', title: '唯一id', minWidth: 100, align: "center"},
-                    {field: 'custId', title: '客户id', minWidth: 100, align: "center"},
-                    {field: 'linkmanId', title: '联系人id', minWidth: 100, align: "center"},
-                    {field: 'visitType', title: '拜访方式, 1 上门走访, 2 电话拜访', minWidth: 100, align: "center"},
-                    {field: 'visitReason', title: '拜访原因', minWidth: 100, align: "center"},
-                    {field: 'content', title: '交流内容', minWidth: 100, align: "center"},
-                    {field: 'visitDate', title: '拜访时间', minWidth: 100, align: "center"},
-                    {field: 'inputUser', title: '录入人', minWidth: 100, align: "center"},
-                    {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
-
+            {field: 'id', title: 'id', minWidth: 100, align: "center"},
+            {field: 'customerName', title: '客户', minWidth: 100, align: "center"},
+            {field: 'linkman', title: '联系人', minWidth: 100, align: "center"},
+            {
+                field: 'visitType', title: '拜访方式', minWidth: 100, align: "center", templet: function (customer) {
+                    if (customer.visitType == '1') {
+                        return "上门走访";
+                    } else if (customer.visitType == '2') {
+                        return "电话拜访";
+                    }
+                }
+            },
+            {field: 'visitReason', title: '拜访原因', minWidth: 100, align: "center"},
+            {field: 'content', title: '交流内容', minWidth: 100, align: "center"},
+            {field: 'visitDate', title: '拜访时间', minWidth: 100, align: "center"},
+            {field: 'username', title: '录入人', minWidth: 100, align: "center"},
+            {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
             {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
 
@@ -129,7 +135,8 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 }, function () {
                 });
                 break;
-        };
+        }
+        ;
     });
 
     $(window).resize(function () {

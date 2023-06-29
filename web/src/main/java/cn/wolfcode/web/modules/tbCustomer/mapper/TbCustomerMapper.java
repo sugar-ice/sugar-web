@@ -1,7 +1,7 @@
 package cn.wolfcode.web.modules.tbCustomer.mapper;
 
 import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.github.yulichang.base.MPJBaseMapper;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author lmio
  * @since 2023-06-27
  */
-public interface TbCustomerMapper extends BaseMapper<TbCustomer> {
+public interface TbCustomerMapper extends MPJBaseMapper<TbCustomer> {
 
 }
