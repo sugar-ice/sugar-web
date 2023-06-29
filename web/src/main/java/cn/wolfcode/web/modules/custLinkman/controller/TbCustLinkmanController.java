@@ -9,8 +9,8 @@ import cn.wolfcode.web.modules.log.LogModules;
 import cn.wolfcode.web.modules.sys.entity.SysUser;
 import cn.wolfcode.web.modules.sys.form.LoginForm;
 import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
+import cn.wolfcode.web.modules.tbCustomer.service.ITbCustomerService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.custLinkman.service.ITbCustLinkmanService;
 import com.github.yulichang.wrapper.MPJLambdaWrapper;
@@ -19,6 +19,7 @@ import link.ahsj.core.annotations.SameUrlData;
 import link.ahsj.core.annotations.SysLog;
 import link.ahsj.core.annotations.UpdateGroup;
 import link.ahsj.core.entitys.ApiModel;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -26,9 +27,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author lmio
@@ -37,6 +38,9 @@ import java.time.LocalDateTime;
 @Controller
 @RequestMapping("custLinkman")
 public class TbCustLinkmanController extends BaseController {
+
+    @Autowired
+    private ITbCustomerService customerService;
 
     @Autowired
     private ITbCustLinkmanService entityService;
@@ -52,6 +56,8 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:add')")
     public ModelAndView toAdd(ModelAndView mv) {
         mv.setViewName("app/custLinkman/add");
+        List<TbCustomer> customers = customerService.list();
+        mv.addObject("customers", customers);
         return mv;
     }
 
@@ -59,6 +65,8 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:update')")
     public ModelAndView toUpdate(@PathVariable("id") String id, ModelAndView mv) {
         mv.setViewName("app/custLinkman/update");
+        List<TbCustomer> customers = customerService.list();
+        mv.addObject("customers", customers);
         mv.addObject("obj", entityService.getById(id));
         mv.addObject("id", id);
         return mv;
@@ -68,7 +76,12 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:list')")
     public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
-        IPage page = entityService.getCustLinkmanWithCust(layuiPage);
+        MPJLambdaWrapper<TbCustLinkman> wrapper = new MPJLambdaWrapper<TbCustLinkman>()
+                .selectAll(TbCustLinkman.class)
+                .select(TbCustomer::getCustomerName)
+                .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId)
+                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName);
+        IPage<TbCustLinkmanWithCust> page = entityService.getCustLinkmanWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }
 

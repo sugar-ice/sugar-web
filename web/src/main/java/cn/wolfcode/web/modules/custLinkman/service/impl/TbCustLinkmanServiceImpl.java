@@ -5,7 +5,6 @@ import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkmanWithCust;
 import cn.wolfcode.web.modules.custLinkman.mapper.TbCustLinkmanMapper;
 import cn.wolfcode.web.modules.custLinkman.service.ITbCustLinkmanService;
-import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -29,12 +28,10 @@ public class TbCustLinkmanServiceImpl extends ServiceImpl<TbCustLinkmanMapper, T
     TbCustLinkmanMapper tbCustLinkmanMapper;
 
     @Override
-    public IPage<TbCustLinkmanWithCust> getCustLinkmanWithCust(LayuiPage layuiPage) {
-        IPage<TbCustLinkmanWithCust> iPage = tbCustLinkmanMapper.selectJoinPage(new Page<>(layuiPage.getPage(), layuiPage.getLimit()), TbCustLinkmanWithCust.class,
-                new MPJLambdaWrapper<TbCustLinkman>()
-                        .selectAll(TbCustLinkman.class)
-                        .select(TbCustomer::getCustomerName)
-                        .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId));
+    public IPage<TbCustLinkmanWithCust> getCustLinkmanWithCust(LayuiPage layuiPage, MPJLambdaWrapper<TbCustLinkman> wrapper) {
+        IPage<TbCustLinkmanWithCust> iPage = tbCustLinkmanMapper.selectJoinPage(new Page<>(layuiPage.getPage(), layuiPage.getLimit()),
+                TbCustLinkmanWithCust.class,
+                wrapper);
         return iPage;
     }
 }

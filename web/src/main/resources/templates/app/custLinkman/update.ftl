@@ -17,24 +17,35 @@
 </script>
 <div class="layui-card layui-content">
     <div class="layui-card-body">
-        <form class="layui-form"  action="" lay-filter="component-form-element">
+        <form class="layui-form" action="" lay-filter="component-form-element">
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">客户id</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">客户</label>
+>>>>>>> origin
                     <div class="layui-input-block">
-                        <input type="text"
-                               name="custId"
-                               value="${obj.custId}"
-                               autocomplete="off"
-                               class="layui-input">
+                        <select name="custId">
+                            <option value="">--请选择--</option>
+                            <#list customers as customer>
+                                <option value="${customer.id}">${customer.customerName}</option>
+                            </#list>
+                        </select>
                     </div>
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">联系人名字</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">联系人名字</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="linkman"
@@ -45,20 +56,29 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">性别 1 男 0 女</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">性别</label>
+>>>>>>> origin
                     <div class="layui-input-block">
-                        <input type="text"
-                               name="sex"
-                               value="${obj.sex}"
-                               autocomplete="off"
-                               class="layui-input">
+                        <select name="sex">
+                            <option value="0">男</option>
+                            <option value="1">女</option>
+                        </select>
                     </div>
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">年龄</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">年龄</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="age"
@@ -69,8 +89,13 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">联系人电话</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">联系人电话</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="phone"
@@ -81,8 +106,13 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">职位</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">职位</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="position"
@@ -93,8 +123,13 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">部门</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">部门</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="department"
@@ -105,8 +140,13 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">备注信息</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">备注信息</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="remark"
@@ -117,8 +157,13 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">录入人</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">录入人</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="inputUser"
@@ -129,8 +174,13 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">录入时间</label>
+=======
+                <div class="layui-col-lg6">
+                    <label class="layui-form-label">录入时间</label>
+>>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text"
                                name="inputTime"

@@ -5,6 +5,7 @@ import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkmanWithCust;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
 
 /**
  * <p>
@@ -15,5 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-06-29
  */
 public interface ITbCustLinkmanService extends IService<TbCustLinkman> {
-    public IPage<TbCustLinkmanWithCust> getCustLinkmanWithCust(LayuiPage layuiPage);
+    public IPage<TbCustLinkmanWithCust> getCustLinkmanWithCust(LayuiPage layuiPage, MPJLambdaWrapper<TbCustLinkman> wrapper);
 }
