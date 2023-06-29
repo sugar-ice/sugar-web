@@ -36,6 +36,5 @@ public class TbCustLinkmanServiceImpl extends ServiceImpl<TbCustLinkmanMapper, T
                         .select(TbCustomer::getCustomerName)
                         .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId));
         return iPage;
-
     }
 }

@@ -68,7 +68,8 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:list')")
     public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
-        return ResponseEntity.ok(LayuiTools.toLayuiTableModel(entityService.getCustLinkmanWithCust(layuiPage)));
+        IPage page = entityService.getCustLinkmanWithCust(layuiPage);
+        return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }
 
     @SameUrlData
