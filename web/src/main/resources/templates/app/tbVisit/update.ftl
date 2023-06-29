@@ -21,7 +21,7 @@
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">客户</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -33,7 +33,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">联系人</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -45,7 +45,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">拜访方式, 1 上门走访, 2 电话拜访</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -57,7 +57,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">拜访原因</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -69,7 +69,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">交流内容</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -81,7 +81,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">拜访时间</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -93,7 +93,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">录入人</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -105,7 +105,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">录入时间</label>
                     <div class="layui-input-block">
                         <input type="text"

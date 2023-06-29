@@ -19,21 +19,21 @@
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">角色名称</label>
                     <div class="layui-input-block">
                         <input type="text" id="roleName" name="roleName" lay-verify="roleName" placeholder="请输入角色名" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">角色编码</label>
                     <div class="layui-input-block">
                         <input type="text" id="roleCode" name="roleCode" lay-verify="roleCode" placeholder="请输入角色编码"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">描述</label>
                     <div class="layui-input-block">
                         <input type="text" id="description" name="description" lay-verify="description" placeholder="角色描述"

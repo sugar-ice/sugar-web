@@ -18,37 +18,37 @@
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">客户</label>
                     <div class="layui-input-block">
                         <input type="text"  name="custId"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">联系人</label>
                     <div class="layui-input-block">
                         <input type="text"  name="linkmanId"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">拜访方式, 1 上门走访, 2 电话拜访</label>
                     <div class="layui-input-block">
                         <input type="text"  name="visitType"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">拜访原因</label>
                     <div class="layui-input-block">
                         <input type="text"  name="visitReason"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">交流内容</label>
                     <div class="layui-input-block">
                         <input type="text"  name="content"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">拜访时间</label>
                     <div class="layui-input-block">
                         <input type="text"  name="visitDate"  placeholder="请输入"  autocomplete="off" class="layui-input">

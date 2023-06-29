@@ -23,21 +23,21 @@
             <input type="hidden" id="roleId" name="roleId" value="${id}">
             <input type="hidden" id="oPid" name="oPid" value="${sysRoleAndMenu.pid}">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">角色名称</label>
                     <div class="layui-input-block">
                         <input type="text" id="roleName" name="roleName" value="${sysRoleAndMenu.roleName}" lay-verify="roleName" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">角色编码</label>
                     <div class="layui-input-block">
                         <input type="text" id="roleCode" name="roleCode" lay-verify="roleCode" value="${sysRoleAndMenu.roleCode}"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">描述</label>
                     <div class="layui-input-block">
                         <input type="text" id="description" name="description" lay-verify="description" placeholder="角色描述" value="${sysRoleAndMenu.description}"

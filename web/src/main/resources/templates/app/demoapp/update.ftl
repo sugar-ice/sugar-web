@@ -22,7 +22,7 @@
             <div class="layui-row layui-col-space10 layui-form-item">
 
 
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">id</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"-->
@@ -34,7 +34,7 @@
 <#--                </div>-->
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">名称</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -46,7 +46,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">创建时间</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -58,7 +58,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">描述</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -70,7 +70,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">age</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -82,7 +82,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">desc</label>
                     <div class="layui-input-block">
                         <input type="text"

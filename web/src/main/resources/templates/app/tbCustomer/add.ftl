@@ -19,31 +19,31 @@
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
 
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">id</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"  name="id"  placeholder="请输入"  autocomplete="off" class="layui-input">-->
 <#--                    </div>-->
 <#--                </div>-->
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">企业名称</label>
                     <div class="layui-input-block">
                         <input type="text"  name="customerName"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">法定代表人</label>
                     <div class="layui-input-block">
                         <input type="text"  name="legalLeader"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">成立时间</label>
                     <div class="layui-input-block">
                         <input type="text"  name="registerDate" id="registerDate"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">经营状态</label>
                     <div class="layui-input-block">
                         <select name = "openStatus">
@@ -53,8 +53,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="layui-col-lg6">
-                        <label class="layui-form-label">所属地区省份</label>
+                <div class="layui-col-lg6" style="margin-top: 10px">
+                    <label class="layui-form-label">所属地区省份</label>
                     <div class="layui-input-block">
                         <select name="province">
                             <option value= "">--请选择--</option>
@@ -64,43 +64,43 @@
                         </select>
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">注册资本,(万元)</label>
                     <div class="layui-input-block">
                         <input type="text"  name="regCapital"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">所属行业</label>
                     <div class="layui-input-block">
                         <input type="text"  name="industry"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">经营范围</label>
                     <div class="layui-input-block">
                         <input type="text"  name="scope"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">注册地址</label>
                     <div class="layui-input-block">
                         <input type="text"  name="regAddr"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">录入时间</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"  name="inputTime"  placeholder="请输入"  autocomplete="off" class="layui-input">-->
 <#--                    </div>-->
 <#--                </div>-->
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">修改时间</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"  name="updateTime"  placeholder="请输入"  autocomplete="off" class="layui-input">-->
 <#--                    </div>-->
 <#--                </div>-->
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">录入人</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"  name="inputUserId"  placeholder="请输入"  autocomplete="off" class="layui-input">-->

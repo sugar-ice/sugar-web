@@ -22,7 +22,7 @@
             <div class="layui-row layui-col-space10 layui-form-item">
 
 
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">id</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"-->
@@ -34,7 +34,7 @@
 <#--                </div>-->
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">企业名称</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -46,7 +46,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">法定代表人</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -58,7 +58,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">成立时间</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -70,7 +70,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">经营状态</label>
                     <div class="layui-input-block">
                         <select name="openStatus">
@@ -82,7 +82,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">所属地区省份</label>
                     <div class="layui-input-block">
                         <select name="province">
@@ -95,7 +95,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">注册资本,(万元)</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -107,7 +107,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">所属行业</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -119,7 +119,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">经营范围</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -131,7 +131,7 @@
                 </div>
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">注册地址</label>
                     <div class="layui-input-block">
                         <input type="text"
@@ -143,7 +143,7 @@
                 </div>
 
 
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">录入时间</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"-->
@@ -155,7 +155,7 @@
 <#--                </div>-->
 
 
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">修改时间</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"-->
@@ -167,7 +167,7 @@
 <#--                </div>-->
 
 
-<#--                <div class="layui-col-lg6">-->
+<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
 <#--                        <label class="layui-form-label">录入人</label>-->
 <#--                    <div class="layui-input-block">-->
 <#--                        <input type="text"-->
