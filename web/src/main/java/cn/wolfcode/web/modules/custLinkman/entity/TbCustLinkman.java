@@ -1,5 +1,10 @@
 package cn.wolfcode.web.modules.custLinkman.entity;
 
+import link.ahsj.core.annotations.AddGroup;
+import link.ahsj.core.annotations.UpdateGroup;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
@@ -20,42 +25,59 @@ public class TbCustLinkman implements Serializable {
     /**
      * 客户id
      */
+    @NotBlank(message = "客户id不能为空", groups = {AddGroup.class, UpdateGroup.class})
     private String custId;
 
     /**
      * 联系人名字
      */
+    @NotBlank(message = "联系人名字不能为空", groups = {AddGroup.class, UpdateGroup.class})
+    @Length(max = 30, message = "联系人名字不能超过30字", groups = {AddGroup.class, UpdateGroup.class})
     private String linkman;
 
     /**
      * 性别 1 男 0 女
      */
+    @NotNull(message = "性别不能为空", groups = {AddGroup.class, UpdateGroup.class})
+    @Min(value = 0, message = "性别错误", groups = {AddGroup.class, UpdateGroup.class})
+    @Max(value = 1, message = "性别错误", groups = {AddGroup.class, UpdateGroup.class})
     private Integer sex;
 
     /**
      * 年龄
      */
+    @NotNull(message = "年龄不能为空", groups = {AddGroup.class, UpdateGroup.class})
+    @Min(value = 0, message = "年龄不能小于0", groups = {AddGroup.class, UpdateGroup.class})
+    @Max(value = 100, message = "年龄不能超过100", groups = {AddGroup.class, UpdateGroup.class})
     private Integer age;
 
     /**
      * 联系人电话
      */
+    @NotBlank(message = "联系人电话不能为空", groups = {AddGroup.class, UpdateGroup.class})
+    @Pattern(regexp = "\\d{1,20}", message = "联系人电话格式错误", groups = {AddGroup.class, UpdateGroup.class})
+    @Length(max = 20, message = "联系人电话不能超过20字", groups = {AddGroup.class, UpdateGroup.class})
     private String phone;
 
     /**
      * 职位
      */
+    @Length(max = 20, message = "职位不能超过20字", groups = {AddGroup.class, UpdateGroup.class})
     private String position;
 
     /**
      * 部门
      */
+    @Length(max = 20, message = "部门不能超过20字", groups = {AddGroup.class, UpdateGroup.class})
     private String department;
 
     /**
-     * 备注信息
+     * 任职状态
      */
-    private String remark;
+    @NotNull(message = "任职状态不能为空", groups = {AddGroup.class, UpdateGroup.class})
+    @Min(value = 0, message = "任职状态错误", groups = {AddGroup.class, UpdateGroup.class})
+    @Max(value = 1, message = "任职状态错误", groups = {AddGroup.class, UpdateGroup.class})
+    private Integer employmentStatus = 0;
 
     /**
      * 录入人
@@ -66,6 +88,11 @@ public class TbCustLinkman implements Serializable {
      * 录入时间
      */
     private LocalDateTime inputTime;
+
+    /**
+     * 备注信息
+     */
+    private String remark;
 
     public String getId() {
         return id;
