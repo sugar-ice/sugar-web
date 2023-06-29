@@ -20,21 +20,30 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         id: "ListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-                    {field: 'id', title:  'id', minWidth: 100, align: "center"},
-                    {field: 'custId', title: '所属客户id', minWidth: 100, align: "center"},
-                    {field: 'prodName', title: '产品名称', minWidth: 100, align: "center"},
-                    {field: 'amounts', title: '产品数量', minWidth: 100, align: "center"},
-                    {field: 'price', title: '产品价格', minWidth: 100, align: "center"},
-                    {field: 'status', title: '状态 0 未发货 1 已发货 2 已收货', minWidth: 100, align: "center"},
-                    {field: 'receiver', title: '收货人', minWidth: 100, align: "center"},
-                    {field: 'linkPhone', title: '收货人电话', minWidth: 100, align: "center"},
-                    {field: 'address', title: '收货地址', minWidth: 100, align: "center"},
-                    {field: 'logistcs', title: '物流', minWidth: 100, align: "center"},
-                    {field: 'logisticsCode', title: '物流单号', minWidth: 100, align: "center"},
-                    {field: 'deliverTime', title: '发货时间', minWidth: 100, align: "center"},
-                    {field: 'receiveTime', title: '收货时间', minWidth: 100, align: "center"},
-
-            {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
+            {field: 'id', title: 'id', minWidth: 100, align: "center"},
+            {field: 'customerName', title: '所属客户', minWidth: 100, align: "center"},
+            {field: 'prodName', title: '产品名称', minWidth: 100, align: "center"},
+            {field: 'amounts', title: '产品数量', minWidth: 100, align: "center"},
+            {field: 'price', title: '产品价格', minWidth: 100, align: "center"},
+            {
+                field: 'status', title: '状态', minWidth: 100, align: "center", templet: function (customer) {
+                    if (customer.status == '0') {
+                        return "<button class=\"layui-btn layui-btn-primary layui-btn-xs\">未发货</button>";
+                    } else if (customer.status == '1') {
+                        return "<button class=\"layui-btn layui-btn-normal layui-btn-xs\">已发货</button>";
+                    } else if (customer.status == '2') {
+                        return "<button class=\"layui-btn layui-btn-array layui-btn-xs\">已收货</button>";
+                    }
+                }
+            },
+            {field: 'receiver', title: '收货人', minWidth: 100, align: "center"},
+            {field: 'linkPhone', title: '收货人电话', minWidth: 100, align: "center"},
+            {field: 'address', title: '收货地址', minWidth: 100, align: "center"},
+            {field: 'logistcs', title: '物流', minWidth: 100, align: "center"},
+            {field: 'logisticsCode', title: '物流单号', minWidth: 100, align: "center"},
+            {field: 'deliverTime', title: '发货时间', minWidth: 100, align: "center"},
+            {field: 'receiveTime', title: '收货时间', minWidth: 100, align: "center"},
+            {title: '操作', width: 240, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
 
     });
@@ -133,7 +142,30 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 }, function () {
                 });
                 break;
-        };
+            case 'ship':
+                data.status = 1
+                $.ajax({
+                    url: web.rootPath() + "orderInfo/update",
+                    contentType: "application/json",
+                    type: "put",
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data)
+                        layer.msg("操作成功", {
+                            icon: 1,
+                            success: function () {
+                                reloadTb("Update-frame", "#SearchBtn");
+                            }
+                        });
+                    },
+                    error: function (e) {
+                        layer.msg(e.responseJSON.message, {icon: 2});
+                    }
+                })
+                break;
+        }
+        ;
     });
 
     $(window).resize(function () {

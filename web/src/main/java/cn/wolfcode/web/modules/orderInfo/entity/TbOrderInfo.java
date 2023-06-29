@@ -5,13 +5,12 @@ import link.ahsj.core.annotations.UpdateGroup;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.*;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author lmio
@@ -73,16 +72,19 @@ public class TbOrderInfo implements Serializable {
     /**
      * 收货地址
      */
+    @NotBlank(message = "收货人地址不能为空", groups = {AddGroup.class, UpdateGroup.class})
     private String address;
 
     /**
      * 物流
      */
+    @NotBlank(message = "物流不能为空", groups = {AddGroup.class, UpdateGroup.class})
     private String logistcs;
 
     /**
      * 物流单号
      */
+    @NotBlank(message = "物流单号不能为空", groups = {AddGroup.class, UpdateGroup.class})
     private String logisticsCode;
 
     /**
@@ -102,6 +104,7 @@ public class TbOrderInfo implements Serializable {
     public void setId(String id) {
         this.id = id;
     }
+
     public String getCustId() {
         return custId;
     }
@@ -109,6 +112,7 @@ public class TbOrderInfo implements Serializable {
     public void setCustId(String custId) {
         this.custId = custId;
     }
+
     public String getProdName() {
         return prodName;
     }
@@ -116,6 +120,7 @@ public class TbOrderInfo implements Serializable {
     public void setProdName(String prodName) {
         this.prodName = prodName;
     }
+
     public Integer getAmounts() {
         return amounts;
     }
@@ -123,6 +128,7 @@ public class TbOrderInfo implements Serializable {
     public void setAmounts(Integer amounts) {
         this.amounts = amounts;
     }
+
     public Integer getPrice() {
         return price;
     }
@@ -130,6 +136,7 @@ public class TbOrderInfo implements Serializable {
     public void setPrice(Integer price) {
         this.price = price;
     }
+
     public Integer getStatus() {
         return status;
     }
@@ -137,6 +144,7 @@ public class TbOrderInfo implements Serializable {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
     public String getReceiver() {
         return receiver;
     }
@@ -144,6 +152,7 @@ public class TbOrderInfo implements Serializable {
     public void setReceiver(String receiver) {
         this.receiver = receiver;
     }
+
     public String getLinkPhone() {
         return linkPhone;
     }
@@ -151,6 +160,7 @@ public class TbOrderInfo implements Serializable {
     public void setLinkPhone(String linkPhone) {
         this.linkPhone = linkPhone;
     }
+
     public String getAddress() {
         return address;
     }
@@ -158,6 +168,7 @@ public class TbOrderInfo implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+
     public String getLogistcs() {
         return logistcs;
     }
@@ -165,6 +176,7 @@ public class TbOrderInfo implements Serializable {
     public void setLogistcs(String logistcs) {
         this.logistcs = logistcs;
     }
+
     public String getLogisticsCode() {
         return logisticsCode;
     }
@@ -172,6 +184,7 @@ public class TbOrderInfo implements Serializable {
     public void setLogisticsCode(String logisticsCode) {
         this.logisticsCode = logisticsCode;
     }
+
     public LocalDateTime getDeliverTime() {
         return deliverTime;
     }
@@ -179,6 +192,7 @@ public class TbOrderInfo implements Serializable {
     public void setDeliverTime(LocalDateTime deliverTime) {
         this.deliverTime = deliverTime;
     }
+
     public LocalDateTime getReceiveTime() {
         return receiveTime;
     }
@@ -190,19 +204,19 @@ public class TbOrderInfo implements Serializable {
     @Override
     public String toString() {
         return "TbOrderInfo{" +
-            "id=" + id +
-            ", custId=" + custId +
-            ", prodName=" + prodName +
-            ", amounts=" + amounts +
-            ", price=" + price +
-            ", status=" + status +
-            ", receiver=" + receiver +
-            ", linkPhone=" + linkPhone +
-            ", address=" + address +
-            ", logistcs=" + logistcs +
-            ", logisticsCode=" + logisticsCode +
-            ", deliverTime=" + deliverTime +
-            ", receiveTime=" + receiveTime +
-        "}";
+                "id=" + id +
+                ", custId=" + custId +
+                ", prodName=" + prodName +
+                ", amounts=" + amounts +
+                ", price=" + price +
+                ", status=" + status +
+                ", receiver=" + receiver +
+                ", linkPhone=" + linkPhone +
+                ", address=" + address +
+                ", logistcs=" + logistcs +
+                ", logisticsCode=" + logisticsCode +
+                ", deliverTime=" + deliverTime +
+                ", receiveTime=" + receiveTime +
+                "}";
     }
 }

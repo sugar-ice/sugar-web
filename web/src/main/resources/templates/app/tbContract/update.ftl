@@ -17,7 +17,7 @@
 </script>
 <div class="layui-card layui-content">
     <div class="layui-card-body">
-        <form class="layui-form"  action="" lay-filter="component-form-element">
+        <form class="layui-form" action="" lay-filter="component-form-element">
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 

@@ -20,28 +20,30 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         id: "ListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-                    {field: 'id', title:  'id', minWidth: 100, align: "center"},
-                    {field: 'customerName', title: '企业名称', minWidth: 100, align: "center"},
-                    {field: 'legalLeader', title: '法定代表人', minWidth: 100, align: "center"},
-                    {field: 'registerDate', title: '成立时间', minWidth: 100, align: "center"},
-                    // {field: 'openStatus', title: '经营状态', minWidth: 100, align: "center"},
-                    {field: 'openStatus', title: '经营状态, 0 开业、1 注销、2 破产', minWidth: 100, align: "center",templet: function (customer) {
-                            if (customer.openStatus == '0') {
-                                return "<button class=\"layui-btn layui-btn-normal layui-btn-xs\">开业</button>";
-                            } else if (customer.openStatus == '1') {
-                                return "<button class=\"layui-btn layui-btn-danger layui-btn-xs\">注销</button>";
-                            } else if (customer.openStatus == '2')  {
-                                return "<button class=\"layui-btn layui-btn-disabled layui-btn-xs\">破产</button>";
-                            }
-                        }},
-                    {field: 'province', title: '所属地区省份', minWidth: 100, align: "center"},
-                    {field: 'regCapital', title: '注册资本,(万元)', minWidth: 100, align: "center"},
-                    {field: 'industry', title: '所属行业', minWidth: 100, align: "center"},
-                    {field: 'scope', title: '经营范围', minWidth: 100, align: "center"},
-                    {field: 'regAddr', title: '注册地址', minWidth: 100, align: "center"},
-                    {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
-                    {field: 'updateTime', title: '修改时间', minWidth: 100, align: "center"},
-                    {field: 'inputUserId', title: '录入人', minWidth: 100, align: "center"},
+            {field: 'id', title: 'id', minWidth: 100, align: "center"},
+            {field: 'customerName', title: '企业名称', minWidth: 100, align: "center"},
+            {field: 'legalLeader', title: '法定代表人', minWidth: 100, align: "center"},
+            {field: 'registerDate', title: '成立时间', minWidth: 100, align: "center"},
+            // {field: 'openStatus', title: '经营状态', minWidth: 100, align: "center"},
+            {
+                field: 'openStatus', title: '经营状态', minWidth: 100, align: "center", templet: function (customer) {
+                    if (customer.openStatus == '0') {
+                        return "<button class=\"layui-btn layui-btn-normal layui-btn-xs\">开业</button>";
+                    } else if (customer.openStatus == '1') {
+                        return "<button class=\"layui-btn layui-btn-danger layui-btn-xs\">注销</button>";
+                    } else if (customer.openStatus == '2') {
+                        return "<button class=\"layui-btn layui-btn-disabled layui-btn-xs\">破产</button>";
+                    }
+                }
+            },
+            {field: 'province', title: '所属地区省份', minWidth: 100, align: "center"},
+            {field: 'regCapital', title: '注册资本,(万元)', minWidth: 100, align: "center"},
+            {field: 'industry', title: '所属行业', minWidth: 100, align: "center"},
+            {field: 'scope', title: '经营范围', minWidth: 100, align: "center"},
+            {field: 'regAddr', title: '注册地址', minWidth: 100, align: "center"},
+            {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
+            {field: 'updateTime', title: '修改时间', minWidth: 100, align: "center"},
+            {field: 'username', title: '录入人', minWidth: 100, align: "center"},
 
             {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
@@ -142,7 +144,8 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 }, function () {
                 });
                 break;
-        };
+        }
+        ;
     });
 
     $(window).resize(function () {

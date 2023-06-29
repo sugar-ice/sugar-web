@@ -20,20 +20,59 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         id: "ListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-                    {field: 'id', title:  'id', minWidth: 100, align: "center"},
-                    {field: 'custId', title: '客户id', minWidth: 100, align: "center"},
-                    {field: 'contractName', title: '合同名称', minWidth: 100, align: "center"},
-                    {field: 'contractCode', title: '合同编码', minWidth: 100, align: "center"},
-                    {field: 'amounts', title: '合同金额', minWidth: 100, align: "center"},
-                    {field: 'startDate', title: '合同生效开始时间', minWidth: 100, align: "center"},
-                    {field: 'endDate', title: '合同生效结束时间', minWidth: 100, align: "center"},
-                    {field: 'content', title: '合同内容', minWidth: 100, align: "center"},
-                    {field: 'affixSealStatus', title: '是否盖章确认 0 否 1 是', minWidth: 100, align: "center"},
-                    {field: 'auditStatus', title: '审核状态 0 未审核 1 审核通过 -1 审核不通过', minWidth: 100, align: "center"},
-                    {field: 'nullifyStatus', title: '是否作废 1 作废 0 在用', minWidth: 100, align: "center"},
-                    {field: 'inputUser', title: '录入人', minWidth: 100, align: "center"},
-                    {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
-                    {field: 'updateTime', title: '修改时间', minWidth: 100, align: "center"},
+            {field: 'id', title: 'id', minWidth: 100, align: "center"},
+            {field: 'customerName', title: '客户', minWidth: 100, align: "center"},
+            {field: 'contractName', title: '合同名称', minWidth: 100, align: "center"},
+            {field: 'contractCode', title: '合同编码', minWidth: 100, align: "center"},
+            {field: 'amounts', title: '合同金额', minWidth: 100, align: "center"},
+            {field: 'startDate', title: '合同生效开始时间', minWidth: 100, align: "center"},
+            {field: 'endDate', title: '合同生效结束时间', minWidth: 100, align: "center"},
+            {field: 'content', title: '合同内容', minWidth: 100, align: "center"},
+            {
+                field: 'affixSealStatus',
+                title: '是否盖章确认',
+                minWidth: 100,
+                align: "center",
+                templet: function (customer) {
+                    if (customer.affixSealStatus == '0') {
+                        return "<span style=\"color: red;\">否</span>"
+                    } else if (customer.affixSealStatus == '1') {
+                        return "<span style=\"color: green;\">是</span>";
+                    }
+                }
+            },
+
+            {
+                field: 'auditStatus',
+                title: '审核状态',
+                minWidth: 100,
+                align: "center",
+                templet: function (customer) {
+                    if (customer.auditStatus == '0') {
+                        return "<button class=\"layui-btn layui-btn-warm layui-btn-xs\">未审核</button>";
+                    } else if (customer.auditStatus == '1') {
+                        return "<button class=\"layui-btn layui-btn-normal layui-btn-xs\">审核通过</button>";
+                    } else if (customer.auditStatus == '-1') {
+                        return "<button class=\"layui-btn layui-btn-danger layui-btn-xs\">审核不通过</button>";
+                    }
+                }
+            },
+            {
+                field: 'nullifyStatus',
+                title: '是否作废',
+                minWidth: 100,
+                align: "center",
+                templet: function (customer) {
+                    if (customer.nullifyStatus == '0') {
+                        return "<span style=\"color: green;\">在用</span>"
+                    } else if (customer.nullifyStatus == '1') {
+                        return "<span style=\"color: red;\">作废</span>";
+                    }
+                }
+            },
+            {field: 'username', title: '录入人', minWidth: 100, align: "center"},
+            {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
+            {field: 'updateTime', title: '修改时间', minWidth: 100, align: "center"},
 
             {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
@@ -134,7 +173,8 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 }, function () {
                 });
                 break;
-        };
+        }
+        ;
     });
 
     $(window).resize(function () {

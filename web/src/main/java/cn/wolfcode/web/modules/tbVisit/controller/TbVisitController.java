@@ -6,6 +6,8 @@ import cn.wolfcode.web.commons.utils.SystemCheckUtils;
 import cn.wolfcode.web.modules.BaseController;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.log.LogModules;
+import cn.wolfcode.web.modules.sys.entity.SysUser;
+import cn.wolfcode.web.modules.sys.form.LoginForm;
 import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
 import cn.wolfcode.web.modules.tbVisit.entity.TbVisit;
 import cn.wolfcode.web.modules.tbVisit.entity.TbVisitWithLinkman;
@@ -25,6 +27,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 /**
  * @author lmio
@@ -66,8 +71,11 @@ public class TbVisitController extends BaseController {
         MPJLambdaWrapper<TbVisit> wrapper = new MPJLambdaWrapper<TbVisit>()
                 .selectAll(TbVisitWithLinkman.class)
                 .select(TbCustLinkman::getLinkman)
+                .select(TbCustomer::getCustomerName)
+                .select(SysUser::getUsername)
                 .leftJoin(TbCustLinkman.class, TbCustLinkman::getId, TbVisit::getLinkmanId)
                 .leftJoin(TbCustomer.class, TbCustomer::getId, TbVisit::getCustId)
+                .leftJoin(SysUser.class, SysUser::getUserId, TbVisit::getInputUser)
                 .like(!StringUtils.isEmpty(parameterName), TbCustLinkman::getLinkman, parameterName)
                 .or()
                 .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName);
@@ -79,7 +87,10 @@ public class TbVisitController extends BaseController {
     @PostMapping("save")
     @SysLog(value = LogModules.SAVE, module = LogModule)
     @PreAuthorize("hasAuthority('app:tbVisit:add')")
-    public ResponseEntity<ApiModel> save(@Validated({AddGroup.class}) @RequestBody TbVisit entity) {
+    public ResponseEntity<ApiModel> save(HttpServletRequest request, @Validated({AddGroup.class}) @RequestBody TbVisit entity) {
+        SysUser user = (SysUser) request.getSession().getAttribute(LoginForm.LOGIN_USER_KEY);
+        entity.setInputUser(user.getUserId());
+        entity.setInputTime(LocalDateTime.now());
         entityService.save(entity);
         return ResponseEntity.ok(ApiModel.ok());
     }

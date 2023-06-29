@@ -1,7 +1,7 @@
 package cn.wolfcode.web.modules.tbContract.mapper;
 
 import cn.wolfcode.web.modules.tbContract.entity.TbContract;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.github.yulichang.base.MPJBaseMapper;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author lmio
  * @since 2023-06-29
  */
-public interface TbContractMapper extends BaseMapper<TbContract> {
+public interface TbContractMapper extends MPJBaseMapper<TbContract> {
 
 }

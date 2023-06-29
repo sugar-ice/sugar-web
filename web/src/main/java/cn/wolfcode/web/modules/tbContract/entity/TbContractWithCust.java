@@ -1,4 +1,4 @@
-package cn.wolfcode.web.modules.tbVisit.entity;
+package cn.wolfcode.web.modules.tbContract.entity;
 
 import link.ahsj.core.annotations.AddGroup;
 import link.ahsj.core.annotations.ImportGroup;
@@ -11,14 +11,10 @@ import javax.validation.constraints.NotBlank;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class TbVisitWithLinkman extends TbVisit {
+public class TbContractWithCust extends TbContract {
     /**
-     * 联系人名字
+     * 企业名称
      */
-    @NotBlank(message = "联系人名字不能为空", groups = {AddGroup.class, UpdateGroup.class})
-    @Length(max = 30, message = "联系人名字不能超过30字", groups = {AddGroup.class, UpdateGroup.class})
-    private String linkman;
-
     @NotBlank(message = "企业名称不能为空", groups = {AddGroup.class, UpdateGroup.class})
     @Length(max = 100, message = "企业名称不能超过100字", groups = {AddGroup.class, UpdateGroup.class})
     private String customerName;
