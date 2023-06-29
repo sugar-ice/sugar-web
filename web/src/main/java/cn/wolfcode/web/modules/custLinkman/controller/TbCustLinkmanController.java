@@ -9,6 +9,7 @@ import cn.wolfcode.web.modules.log.LogModules;
 import cn.wolfcode.web.modules.sys.entity.SysUser;
 import cn.wolfcode.web.modules.sys.form.LoginForm;
 import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
+import cn.wolfcode.web.modules.tbCustomer.service.ITbCustomerService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.custLinkman.service.ITbCustLinkmanService;
@@ -26,9 +27,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author lmio
@@ -37,6 +38,9 @@ import java.time.LocalDateTime;
 @Controller
 @RequestMapping("custLinkman")
 public class TbCustLinkmanController extends BaseController {
+
+    @Autowired
+    private ITbCustomerService customerService;
 
     @Autowired
     private ITbCustLinkmanService entityService;
@@ -52,6 +56,8 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:add')")
     public ModelAndView toAdd(ModelAndView mv) {
         mv.setViewName("app/custLinkman/add");
+        List<TbCustomer> customers = customerService.list();
+        mv.addObject("customers", customers);
         return mv;
     }
 
@@ -59,6 +65,8 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:update')")
     public ModelAndView toUpdate(@PathVariable("id") String id, ModelAndView mv) {
         mv.setViewName("app/custLinkman/update");
+        List<TbCustomer> customers = customerService.list();
+        mv.addObject("customers", customers);
         mv.addObject("obj", entityService.getById(id));
         mv.addObject("id", id);
         return mv;

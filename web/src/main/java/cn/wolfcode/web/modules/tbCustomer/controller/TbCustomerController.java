@@ -51,6 +51,7 @@ public class TbCustomerController extends BaseController {
     @RequestMapping("/add.html")
     @PreAuthorize("hasAuthority('app:tbCustomer:add')")
     public ModelAndView toAdd(ModelAndView mv) {
+        mv.addObject("citys", CityUtils.citys);
         mv.setViewName("app/tbCustomer/add");
         return mv;
     }
