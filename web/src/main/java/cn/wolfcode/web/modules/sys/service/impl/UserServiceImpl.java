@@ -39,6 +39,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -58,7 +59,7 @@ import static java.util.stream.Collectors.toCollection;
 @Log4j2
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
     @Autowired
     private SysDeptService sysDeptService;
@@ -329,5 +330,10 @@ public class UserServiceImpl implements UserService {
                 item.setDeptId(dept.getDeptId());
             }
         });
+    }
+
+    @Override
+    public List<SysUser> list() {
+        return sysUserService.list();
     }
 }

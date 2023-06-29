@@ -33,16 +33,16 @@ public class GeneratorTest {
         GeneratorUtils.generator(
                 "web",
                 "cn.wolfcode.web.modules",
-                "orderInfo",
+                "messageMgr",
                 DbType.MYSQL,
-                "E:\\app",
+                "C:\\Users\\Limc\\Downloads\\",
                 // 页面上的父上下文
                 // 自己的上下文
                 "1111",
-                "订货单管理",
+                "通知中心",
                 null,
-                "app",
-                "orderInfo",
+                "messageMgr",
+                "messageMgr",
                 "lmio",
                 "127.0.0.1",
                 "3306",
@@ -50,7 +50,7 @@ public class GeneratorTest {
                 "root",
                 "12345678",
                 new String[]{"bmd_", "mp_", "SYS_"},
-                new String[]{"tb_order_info"},false
+                new String[]{"zz_message"},false
         );
     }
 }

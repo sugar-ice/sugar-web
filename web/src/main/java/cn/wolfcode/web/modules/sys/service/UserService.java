@@ -101,4 +101,6 @@ public interface UserService {
      * @return
      */
     SysUser getById(Serializable id);
+
+    List<SysUser> list();
 }

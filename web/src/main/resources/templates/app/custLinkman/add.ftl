@@ -17,15 +17,9 @@
 <div class="layui-card layui-content">
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
-<<<<<<< HEAD
             <div class="layui-row layui-col-space10 layui-form-item">
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">客户</label>
-=======
-            <div class="layui-row layui-col-space10 layui-col-lg-offset10 layui-form-item">
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">客户</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <select name="custId">
                             <option value="">--请选择--</option>
@@ -35,24 +29,14 @@
                         </select>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">联系人名字</label>
-=======
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">联系人名字</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text" name="linkman" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
-                        <label class="layui-form-label">性别 1 男 0 女</label>
-=======
-                <div class="layui-col-lg6">
                     <label class="layui-form-label">性别</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <select name="sex">
                             <option value="0">男</option>
@@ -60,58 +44,33 @@
                         </select>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">年龄</label>
-=======
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">年龄</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text" name="age" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">联系人电话</label>
-=======
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">联系人电话</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text" name="phone" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">职位</label>
-=======
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">职位</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text" name="position" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">部门</label>
-=======
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">部门</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text" name="department" placeholder="请输入" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label">备注信息</label>
-=======
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">备注信息</label>
->>>>>>> origin
                     <div class="layui-input-block">
                         <input type="text" name="remark" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
