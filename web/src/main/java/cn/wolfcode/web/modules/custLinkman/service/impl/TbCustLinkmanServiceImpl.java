@@ -29,12 +29,9 @@ public class TbCustLinkmanServiceImpl extends ServiceImpl<TbCustLinkmanMapper, T
     TbCustLinkmanMapper tbCustLinkmanMapper;
 
     @Override
-    public IPage<TbCustLinkmanWithCust> getCustLinkmanWithCust(LayuiPage layuiPage) {
+    public IPage<TbCustLinkmanWithCust> getCustLinkmanWithCust(LayuiPage layuiPage, MPJLambdaWrapper<TbCustLinkman> wrapper) {
         IPage<TbCustLinkmanWithCust> iPage = tbCustLinkmanMapper.selectJoinPage(new Page<>(layuiPage.getPage(), layuiPage.getLimit()), TbCustLinkmanWithCust.class,
-                new MPJLambdaWrapper<TbCustLinkman>()
-                        .selectAll(TbCustLinkman.class)
-                        .select(TbCustomer::getCustomerName)
-                        .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId));
+                wrapper);
         return iPage;
     }
 }

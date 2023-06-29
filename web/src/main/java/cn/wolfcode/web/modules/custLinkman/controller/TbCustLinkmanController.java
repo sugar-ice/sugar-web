@@ -10,7 +10,6 @@ import cn.wolfcode.web.modules.sys.entity.SysUser;
 import cn.wolfcode.web.modules.sys.form.LoginForm;
 import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.custLinkman.service.ITbCustLinkmanService;
 import com.github.yulichang.wrapper.MPJLambdaWrapper;
@@ -19,6 +18,7 @@ import link.ahsj.core.annotations.SameUrlData;
 import link.ahsj.core.annotations.SysLog;
 import link.ahsj.core.annotations.UpdateGroup;
 import link.ahsj.core.entitys.ApiModel;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -68,7 +68,12 @@ public class TbCustLinkmanController extends BaseController {
     @PreAuthorize("hasAuthority('app:custLinkman:list')")
     public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
-        IPage page = entityService.getCustLinkmanWithCust(layuiPage);
+        MPJLambdaWrapper<TbCustLinkman> wrapper = new MPJLambdaWrapper<TbCustLinkman>()
+                .selectAll(TbCustLinkman.class)
+                .select(TbCustomer::getCustomerName)
+                .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId)
+                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName);
+        IPage<TbCustLinkmanWithCust> page = entityService.getCustLinkmanWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }
 
