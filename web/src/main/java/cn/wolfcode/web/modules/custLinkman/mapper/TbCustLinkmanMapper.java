@@ -1,7 +1,7 @@
 package cn.wolfcode.web.modules.custLinkman.mapper;
 
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.github.yulichang.base.MPJBaseMapper;
 
 /**
  * <p>
@@ -11,6 +11,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author lmio
  * @since 2023-06-29
  */
-public interface TbCustLinkmanMapper extends BaseMapper<TbCustLinkman> {
-
+public interface TbCustLinkmanMapper extends MPJBaseMapper<TbCustLinkman> {
 }

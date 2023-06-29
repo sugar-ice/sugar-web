@@ -24,6 +24,11 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>${mybatis-plus-generator}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.yulichang</groupId>
+            <artifactId>mybatis-plus-join-boot-starter</artifactId>
+            <version>1.4.5</version>
+        </dependency>
         <!-- 图片操作 -->
         <dependency>
             <groupId>net.coobird</groupId>

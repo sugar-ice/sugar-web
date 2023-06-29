@@ -21,21 +21,8 @@
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 
-
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">唯一id</label>
-                    <div class="layui-input-block">
-                        <input type="text"
-                               name="id"
-                               value="${obj.id}"
-                               autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-
-
-                <div class="layui-col-lg6">
-                        <label class="layui-form-label">客户id</label>
+                        <label class="layui-form-label">客户</label>
                     <div class="layui-input-block">
                         <input type="text"
                                name="custId"
@@ -47,7 +34,7 @@
 
 
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">联系人id</label>
+                        <label class="layui-form-label">联系人</label>
                     <div class="layui-input-block">
                         <input type="text"
                                name="linkmanId"

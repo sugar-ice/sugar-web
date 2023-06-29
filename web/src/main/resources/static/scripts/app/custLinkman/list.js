@@ -21,7 +21,7 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
                     {field: 'id', title:  'id', minWidth: 100, align: "center"},
-                    {field: 'custId', title: '客户id', minWidth: 100, align: "center"},
+                    {field: 'customerName', title: '客户', minWidth: 100, align: "center"},
                     {field: 'linkman', title: '联系人名字', minWidth: 100, align: "center"},
                     {field: 'sex', title: '性别 1 男 0 女', minWidth: 100, align: "center"},
                     {field: 'age', title: '年龄', minWidth: 100, align: "center"},

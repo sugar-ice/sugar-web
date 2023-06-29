@@ -4,11 +4,16 @@ import cn.wolfcode.web.commons.entity.LayuiPage;
 import cn.wolfcode.web.commons.utils.LayuiTools;
 import cn.wolfcode.web.commons.utils.SystemCheckUtils;
 import cn.wolfcode.web.modules.BaseController;
+import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkmanWithCust;
 import cn.wolfcode.web.modules.log.LogModules;
+import cn.wolfcode.web.modules.sys.entity.SysUser;
+import cn.wolfcode.web.modules.sys.form.LoginForm;
+import cn.wolfcode.web.modules.tbCustomer.entity.TbCustomer;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import cn.wolfcode.web.modules.custLinkman.entity.TbCustLinkman;
 import cn.wolfcode.web.modules.custLinkman.service.ITbCustLinkmanService;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import link.ahsj.core.annotations.AddGroup;
 import link.ahsj.core.annotations.SameUrlData;
 import link.ahsj.core.annotations.SysLog;
@@ -21,6 +26,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 /**
  * @author lmio
@@ -58,17 +66,19 @@ public class TbCustLinkmanController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:custLinkman:list')")
-    public ResponseEntity page(LayuiPage layuiPage) {
+    public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
-        IPage page = new Page<>(layuiPage.getPage(), layuiPage.getLimit());
-        return ResponseEntity.ok(LayuiTools.toLayuiTableModel(entityService.page(page)));
+        return ResponseEntity.ok(LayuiTools.toLayuiTableModel(entityService.getCustLinkmanWithCust(layuiPage)));
     }
 
     @SameUrlData
     @PostMapping("save")
     @SysLog(value = LogModules.SAVE, module =LogModule)
     @PreAuthorize("hasAuthority('app:custLinkman:add')")
-    public ResponseEntity<ApiModel> save(@Validated({AddGroup.class}) @RequestBody TbCustLinkman entity) {
+    public ResponseEntity<ApiModel> save(HttpServletRequest request, @Validated({AddGroup.class}) @RequestBody TbCustLinkman entity) {
+        SysUser user = (SysUser) request.getSession().getAttribute(LoginForm.LOGIN_USER_KEY);
+        entity.setInputUser(user.getUserId());
+        entity.setInputTime(LocalDateTime.now());
         entityService.save(entity);
         return ResponseEntity.ok(ApiModel.ok());
     }

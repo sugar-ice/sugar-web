@@ -18,21 +18,14 @@
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
-
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">唯一id</label>
-                    <div class="layui-input-block">
-                        <input type="text"  name="id"  placeholder="请输入"  autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-col-lg6">
-                        <label class="layui-form-label">客户id</label>
+                        <label class="layui-form-label">客户</label>
                     <div class="layui-input-block">
                         <input type="text"  name="custId"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6">
-                        <label class="layui-form-label">联系人id</label>
+                        <label class="layui-form-label">联系人</label>
                     <div class="layui-input-block">
                         <input type="text"  name="linkmanId"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
@@ -59,18 +52,6 @@
                         <label class="layui-form-label">拜访时间</label>
                     <div class="layui-input-block">
                         <input type="text"  name="visitDate"  placeholder="请输入"  autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-col-lg6">
-                        <label class="layui-form-label">录入人</label>
-                    <div class="layui-input-block">
-                        <input type="text"  name="inputUser"  placeholder="请输入"  autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-col-lg6">
-                        <label class="layui-form-label">录入时间</label>
-                    <div class="layui-input-block">
-                        <input type="text"  name="inputTime"  placeholder="请输入"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
 

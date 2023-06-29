@@ -3,7 +3,6 @@ package cn.wolfcode.web.modules.custLinkman.entity;
 import link.ahsj.core.annotations.AddGroup;
 import link.ahsj.core.annotations.UpdateGroup;
 import org.hibernate.validator.constraints.Length;
-
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 import java.io.Serializable;
