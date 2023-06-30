@@ -28,8 +28,7 @@
                                class="layui-input">
                     </div>
                 </div>
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">消息类型</label>
                 <div class="layui-input-block">
                     <select name="sex">

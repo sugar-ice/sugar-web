@@ -19,23 +19,20 @@
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">客户</label>
                 <div class="layui-input-block">
                     <input type="text" name="custId" placeholder="请输入" autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">合同名称</label>
             <div class="layui-input-block">
                 <input type="text" name="contractName" placeholder="请输入" autocomplete="off"
                        class="layui-input">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">合同编码</label>
     <div class="layui-input-block">
         <input type="text" name="contractCode" placeholder="请输入" autocomplete="off"

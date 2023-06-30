@@ -22,8 +22,7 @@
             <div class="layui-row layui-col-space10 layui-form-item">
 
 
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">id</label>
                 <div class="layui-input-block">
                     <input type="text"
@@ -35,8 +34,7 @@
             </div>
 
 
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">客户id</label>
             <div class="layui-input-block">
                 <input type="text"
@@ -48,8 +46,7 @@
     </div>
 
 
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">合同名称</label>
     <div class="layui-input-block">
         <input type="text"

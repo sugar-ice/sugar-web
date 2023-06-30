@@ -19,8 +19,7 @@
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">名称</label>
                 <div class="layui-input-block">
                     <input type="text" id="name" name="name" lay-verify="name" placeholder="请输入name"
@@ -28,16 +27,14 @@
                            class="layui-input">
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">详情</label>
             <div class="layui-input-block">
                 <input type="text" id="info" name="info" lay-verify="info" placeholder="请输入info"
                        autocomplete="off" class="layui-input">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">创建时间</label>
     <div class="layui-input-block">
         <input type="text" id="createTime" name="createTime" lay-verify="createTime" placeholder="请输入createTime"

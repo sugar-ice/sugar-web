@@ -39,8 +39,7 @@
             <input type="hidden" id="menuId" name="menuId" value="${id}">
             <input type="hidden" id="parentId" name="parentId" value="${parentId}">
             <div class="layui-row layui-form-item">
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label text-lable" style="line-height: 30px">类型</label>
                 <div class="layui-input-block text-input">
                     <#if sysMenu.menuType == 1>

@@ -25,22 +25,19 @@
                 <#--                        <input type="text"  name="id"  placeholder="请输入"  autocomplete="off" class="layui-input">-->
                 <#--                    </div>-->
                 <#--                </div>-->
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">企业名称</label>
                 <div class="layui-input-block">
                     <input type="text" name="customerName" placeholder="请输入" autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">法定代表人</label>
             <div class="layui-input-block">
                 <input type="text" name="legalLeader" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">成立时间</label>
     <div class="layui-input-block">
         <input type="text" name="registerDate" id="registerDate" placeholder="请输入" autocomplete="off"

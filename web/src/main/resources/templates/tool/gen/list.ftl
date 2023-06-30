@@ -98,8 +98,7 @@
                                        class="layui-input">
                             </div>
                         </div>
-                        <class
-                        ="layui-col-lg6">
+                        <div class="layui-col-lg6" style="margin-top: 10px">
                         <label class="layui-form-label text-label">上级菜单</label>
                         <div class="layui-input-block text-input">
                             <input type="text" id="menuParentCode" name="baseMenuId" lay-verify="required"

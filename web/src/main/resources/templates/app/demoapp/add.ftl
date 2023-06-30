@@ -25,22 +25,19 @@
                 <#--                        <input type="text"  name="id"  placeholder="请输入"  autocomplete="off" class="layui-input">-->
                 <#--                    </div>-->
                 <#--                </div>-->
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">名称</label>
                 <div class="layui-input-block">
                     <input type="text" name="name" placeholder="请输入" autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">创建时间</label>
             <div class="layui-input-block">
                 <input type="text" name="createTime" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">描述</label>
     <div class="layui-input-block">
         <input type="text" name="info" placeholder="请输入" autocomplete="off" class="layui-input">

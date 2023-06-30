@@ -18,8 +18,7 @@
     <div class="layui-card-body">
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">所属客户id</label>
                 <div class="layui-input-block">
                     <select name="custId">
@@ -30,15 +29,13 @@
                     </select>
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">产品名称</label>
             <div class="layui-input-block">
                 <input type="text" name="prodName" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">产品数量</label>
     <div class="layui-input-block">
         <input type="text" name="amounts" placeholder="请输入" autocomplete="off" class="layui-input">

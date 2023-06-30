@@ -21,8 +21,7 @@
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">所属客户</label>
                 <div class="layui-input-block">
                     <input type="text"
@@ -34,8 +33,7 @@
             </div>
 
 
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">产品名称</label>
             <div class="layui-input-block">
                 <input type="text"
@@ -47,8 +45,7 @@
     </div>
 
 
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">产品数量</label>
     <div class="layui-input-block">
         <input type="text"

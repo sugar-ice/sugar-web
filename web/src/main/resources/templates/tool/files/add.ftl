@@ -19,22 +19,19 @@
         <form class="layui-form" action="" lay-filter="component-form-element">
             <div class="layui-row layui-col-space10 layui-form-item">
 
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">id</label>
                 <div class="layui-input-block">
                     <input type="text" name="id" placeholder="请输入" autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">创建时间</label>
             <div class="layui-input-block">
                 <input type="text" name="createTime" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">状态. 1代表正常. 0代表已删除</label>
     <div class="layui-input-block">
         <input type="text" name="disable" placeholder="请输入" autocomplete="off" class="layui-input">

@@ -22,8 +22,7 @@
         <form class="layui-form" action="" lay-filter="component-form-element">
             <input type="hidden" id="disable" name="disable" value="${obj.disable.value}">
             <div class="layui-row layui-col-space10 layui-form-item">
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">配置标识</label>
                 <div class="layui-input-block">
                     <input type="text" id="configKey" readonly name="configKey" lay-verify="configKey"
@@ -31,8 +30,7 @@
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">所属配置</label>
             <div class="layui-input-block">
                 <input type="text" id="parentKey" name="parentKey" lay-verify="parentKey"
@@ -40,8 +38,7 @@
                        autocomplete="off" class="layui-input" value="-">
             </div>
     </div>
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">配置描述</label>
     <div class="layui-input-block">
         <input type="text" id="info" name="info" lay-verify="info" placeholder="配置描述,描述这个配置做什么的"

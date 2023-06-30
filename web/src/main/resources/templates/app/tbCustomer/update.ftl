@@ -34,8 +34,7 @@
                 <#--                </div>-->
 
 
-                <class
-                ="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                 <label class="layui-form-label">企业名称</label>
                 <div class="layui-input-block">
                     <input type="text"
@@ -47,8 +46,7 @@
             </div>
 
 
-            <class
-            ="layui-col-lg6">
+            <div class="layui-col-lg6" style="margin-top: 10px">
             <label class="layui-form-label">法定代表人</label>
             <div class="layui-input-block">
                 <input type="text"
@@ -60,8 +58,7 @@
     </div>
 
 
-    <class
-    ="layui-col-lg6">
+    <div class="layui-col-lg6" style="margin-top: 10px">
     <label class="layui-form-label">成立时间</label>
     <div class="layui-input-block">
         <input type="text"
