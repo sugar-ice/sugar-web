@@ -75,7 +75,11 @@ public class TbContractController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:tbContract:list')")
-    public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
+    public ResponseEntity page(LayuiPage layuiPage,
+                               String parameterName,
+                               String affixSealStatus,
+                               String auditStatu,
+                               String nullifyStatus) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
         MPJLambdaWrapper<TbContract> wrapper = new MPJLambdaWrapper<TbContract>()
                 .selectAll(TbContract.class)
@@ -89,7 +93,13 @@ public class TbContractController extends BaseController {
                 .or()
                 .like(!StringUtils.isEmpty(parameterName), SysUser::getUsername, parameterName)
                 .or()
-                .like(!StringUtils.isEmpty(parameterName), TbContract::getContractCode, parameterName);
+                .like(!StringUtils.isEmpty(parameterName), TbContract::getContractCode, parameterName)
+                .or()
+                .eq(!StringUtils.isEmpty(affixSealStatus), TbContract::getAffixSealStatus, affixSealStatus)
+                .or()
+                .eq(!StringUtils.isEmpty(auditStatu), TbContract::getAuditStatus, auditStatu)
+                .or()
+                .eq(!StringUtils.isEmpty(nullifyStatus), TbContract::getNullifyStatus, nullifyStatus);
         IPage<TbContractWithCust> page = entityService.getContractWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }

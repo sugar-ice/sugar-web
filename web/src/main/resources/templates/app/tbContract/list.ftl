@@ -32,7 +32,37 @@
                                            class="layui-input">
                                 </div>
                             </div>
-
+                            <div class="layui-inline">
+                                <label class="layui-form-label">是否盖章</label>
+                                <div class="layui-input-block">
+                                    <select name="affixSealStatus">
+                                        <option value="">--请选择--</option>
+                                        <option value="1">是</option>
+                                        <option value="0">否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">审核状态</label>
+                                <div class="layui-input-block">
+                                    <select name="auditStatus">
+                                        <option value="">--请选择--</option>
+                                        <option value="0">未审核</option>
+                                        <option value="1">审核通过</option>
+                                        <option value="-1">审核不通过</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">是否作废</label>
+                                <div class="layui-input-block">
+                                    <select name="nullifyStatus">
+                                        <option value="">--请选择--</option>
+                                        <option value="0">在用</option>
+                                        <option value="1">作废</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="layui-inline">
                                 <button type="button" class="layui-btn layui-btn-normal" id="SearchBtn"
                                         data-type="reload">搜索
