@@ -88,8 +88,7 @@ public class TbVisitController extends BaseController {
                 .like(!StringUtils.isEmpty(parameterName), TbCustLinkman::getLinkman, parameterName)
                 .or()
                 .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName)
-                .or()
-                .like(!StringUtils.isEmpty(visitType), TbVisit::getVisitType, visitType);
+                .eq(!StringUtils.isEmpty(visitType), TbVisit::getVisitType, visitType);
         IPage<TbVisitWithLinkman> page = entityService.getTbVisitWithLinkman(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }

@@ -25,9 +25,9 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 field: 'messageType', title: '消息类型', minWidth: 100, align: "center", templet: function (data) {
                     var value = data.messageType;
                     var text = '';
-                    if (value == '0') {
+                    if (value == '1') {
                         text = '系统消息';
-                    } else if (value == '1') {
+                    } else if (value == '2') {
                         text = '用户消息';
                     }
                     return text;

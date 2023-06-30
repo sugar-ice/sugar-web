@@ -82,7 +82,6 @@ public class TbOrderInfoController extends BaseController {
                 .like(!StringUtils.isEmpty(parameterName), TbOrderInfo::getProdName, parameterName)
                 .or()
                 .like(!StringUtils.isEmpty(parameterName), TbCustomer::getInputTime, parameterName)
-                .or()
                 .eq(!StringUtils.isEmpty(status), TbOrderInfo::getStatus, status);
         IPage<TbOrderInfoWithCust> page = entityService.getTbOrderInfoWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));

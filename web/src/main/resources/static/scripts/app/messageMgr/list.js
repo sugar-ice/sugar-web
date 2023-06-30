@@ -26,9 +26,9 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 field: 'messageType', title: '消息类型', minWidth: 100, align: "center", templet: function (data) {
                     var value = data.messageType;
                     var text = '';
-                    if (value == '0') {
+                    if (value == '1') {
                         text = '系统消息';
-                    } else if (value == '1') {
+                    } else if (value == '2') {
                         text = '用户消息';
                     }
                     return text;
@@ -36,7 +36,9 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             },
             {field: 'publishTime', title: '消息发布时间', minWidth: 100, align: "center"},
             {field: 'publisherUsername', title: '消息发布人', minWidth: 100, align: "center"},
-            {field: 'receiverUsername', title: '消息接收人', minWidth: 100, align: "center"},
+            { field: 'receiverUsername', title: '消息接收人', minWidth: 100, align: "center", templet: function(d){
+                    return d.receiverUsername ? d.receiverUsername : '全部人';
+            }},
             {field: 'messageContent', title: '消息详情', minWidth: 100, align: "center"},
             {
                 field: 'topPriority', title: '置顶优先级', minWidth: 100, align: "center", templet: function (data) {

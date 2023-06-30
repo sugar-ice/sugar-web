@@ -66,6 +66,7 @@
                                name="amounts"
                                value="${obj.amounts}"
                                autocomplete="off"
+                               id="amountsInput"
                                class="layui-input">
                     </div>
                 </div>
@@ -159,7 +160,11 @@
 <script src="${request.contextPath}/layui-extend.js"></script>
 <script src="${request.contextPath}/webjars/jquery/jquery.min.js"></script>
 <script>
-
+    var amountsInput = document.getElementById('amountsInput');
+    var amounts = amountsInput.value;
+    amounts = amounts.replace(/,/g, ''); // 去除逗号分隔符
+    amountsInput.value = amounts; // 更新输入框的值
 </script>
+
 <script type="text/javascript" src="${request.contextPath}/scripts/app/tbContract/update.js?_=${randomNum}"></script>
 </body>

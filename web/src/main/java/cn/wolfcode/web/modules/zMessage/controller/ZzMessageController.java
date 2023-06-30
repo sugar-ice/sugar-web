@@ -60,7 +60,7 @@ public class ZzMessageController extends BaseController {
     public ResponseEntity list(LayuiPage layuiPage, HttpServletRequest request) {
         String userId = ((SysUser) request.getSession().getAttribute(LoginForm.LOGIN_USER_KEY)).getUserId();
         layuiPage = layuiPage == null ? new LayuiPage() : layuiPage;
-        List<ZzMessagePerUserDetail> msgs = messagePerUserService.checkMsg(null, 0, userId, layuiPage.getPage(), layuiPage.getLimit());
+        List<ZzMessagePerUserDetail> msgs = messagePerUserService.checkMsg(null, null, userId, layuiPage.getPage(), layuiPage.getLimit());
         for (ZzMessagePerUserDetail msg : msgs) {
             if (msg.getIsRead() == null) {
                 ZzMessagePerUser newMsg = new ZzMessagePerUser();

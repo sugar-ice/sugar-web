@@ -78,7 +78,7 @@ public class TbContractController extends BaseController {
     public ResponseEntity page(LayuiPage layuiPage,
                                String parameterName,
                                String affixSealStatus,
-                               String auditStatu,
+                               String auditStatus,
                                String nullifyStatus) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
         MPJLambdaWrapper<TbContract> wrapper = new MPJLambdaWrapper<TbContract>()
@@ -96,9 +96,7 @@ public class TbContractController extends BaseController {
                 .like(!StringUtils.isEmpty(parameterName), TbContract::getContractCode, parameterName)
                 .or()
                 .eq(!StringUtils.isEmpty(affixSealStatus), TbContract::getAffixSealStatus, affixSealStatus)
-                .or()
-                .eq(!StringUtils.isEmpty(auditStatu), TbContract::getAuditStatus, auditStatu)
-                .or()
+                .eq(!StringUtils.isEmpty(auditStatus), TbContract::getAuditStatus, auditStatus)
                 .eq(!StringUtils.isEmpty(nullifyStatus), TbContract::getNullifyStatus, nullifyStatus);
         IPage<TbContractWithCust> page = entityService.getContractWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
@@ -127,7 +125,12 @@ public class TbContractController extends BaseController {
         entity.setInputTime(LocalDateTime.now());
         entity.setUpdateTime(LocalDateTime.now());
         TbContract contract = entityService.getById(entity.getId());
-        if (contract.getAuditStatus() != 0) {
+        if (contract.getAuditStatus() == 0) {
+            if (entity.getAuditStatus() == 1) {
+                contract.setAuditStatus(1);
+                entityService.updateById(contract);
+                return ResponseEntity.ok(ApiModel.ok());
+            }
             return ResponseEntity.badRequest().body(ApiModel.error("未通过审核不能修改！"));
         }
         if (entity.getNullifyStatus() == 1) {

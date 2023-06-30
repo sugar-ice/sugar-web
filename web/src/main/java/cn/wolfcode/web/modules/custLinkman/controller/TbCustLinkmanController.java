@@ -82,7 +82,6 @@ public class TbCustLinkmanController extends BaseController {
                 .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId)
                 .leftJoin(SysUser.class, SysUser::getUserId, TbCustLinkman::getInputUser)
                 .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName)
-                .or()
                 .eq(!StringUtils.isEmpty(sex), TbCustLinkman::getSex, sex);
         IPage<TbCustLinkmanWithCust> page = entityService.getCustLinkmanWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));

@@ -87,10 +87,10 @@ public class ZzMessageMgrController extends BaseController {
         LocalDateTime endTime = Optional.ofNullable(endTimeStr).map(s -> LocalDateTime.parse(s, formatter)).orElse(null);
         MPJLambdaWrapper<ZzMessage> wrapper = new MPJLambdaWrapper<ZzMessage>()
                 .selectAll(ZzMessage.class)
-                .selectAs(SysUser::getUsername, "publisher_username")
-                .selectAs(SysUser::getUsername, "receiver_username")
-                .leftJoin(SysUser.class, SysUser::getUserId, ZzMessage::getPublisherId)
-                .leftJoin(SysUser.class, SysUser::getUserId, ZzMessage::getReceiverId)
+                .select("p.username as publisher_username")
+                .select("r.username as receiver_username")
+                .leftJoin(SysUser.class, "p", SysUser::getUserId, ZzMessage::getPublisherId)
+                .leftJoin(SysUser.class, "r", SysUser::getUserId, ZzMessage::getReceiverId)
                 .like(!StringUtils.isEmpty(parameterName), ZzMessage::getMessageTitle, parameterName);
 //                .between(startTime != null && endTime != null, ZzMessage::getPublishTime, startTime, endTime);
         IPage<ZzMessageWithName> page = entityService.findZzMessageWithNameMapper(layuiPage, wrapper);

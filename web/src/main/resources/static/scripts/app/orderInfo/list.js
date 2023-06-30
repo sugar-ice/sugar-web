@@ -50,21 +50,15 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             //遍历每条数据
             for (var i = 0; i < res.data.length; i++) {
                 if (res.data[i].status == 0) {
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
                     $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="reword"]').addClass('layui-btn-disabled').off('click');
                 }
                 if (res.data[i].status == 1) {
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
                     $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="ship"]').addClass('layui-btn-disabled').off('click');
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
                     $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="update"]').addClass('layui-btn-disabled').off('click');
                 }
                 if (res.data[i].status == 2) {
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
                     $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="ship"]').addClass('layui-btn-disabled').off('click');
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
                     $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="update"]').addClass('layui-btn-disabled').off('click');
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
                     $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="reword"]').addClass('layui-btn-disabled').off('click');
                 }
             }

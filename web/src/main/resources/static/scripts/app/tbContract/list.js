@@ -73,9 +73,16 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             {field: 'username', title: '录入人', minWidth: 100, align: "center"},
             {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
             {field: 'updateTime', title: '修改时间', minWidth: 100, align: "center"},
-            {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
+            {title: '操作', width: 240, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
-
+        done: function (res, curr, count) {
+            //遍历每条数据
+            for (var i = 0; i < res.data.length; i++) {
+                if (res.data[i].auditStatus != 0) {
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="pass"]').addClass('layui-btn-disabled').off('click');
+                }
+            }
+        }
     });
 
     //头工具栏事件
@@ -177,6 +184,32 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                     })
                 }, function () {
                 });
+                break;
+            case 'pass':
+                data.auditStatus = 1
+                $.ajax({
+                    url: web.rootPath() + "tbContract/update",
+                    contentType: "application/json",
+                    type: "put",
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data)
+                        layer.msg("操作成功", {
+                            icon: 1,
+                            success: function () {
+                                reloadTb("Update-frame", "#SearchBtn");
+                            }
+                        });
+                    },
+                    error: function (e) {
+                        if (e.responseJSON.errCode === 1003) {
+                            layer.msg(e.responseJSON.data.toString(), {icon: 2});
+                        } else {
+                            layer.msg(e.responseJSON.message, {icon: 2});
+                        }
+                    }
+                })
                 break;
         }
         ;

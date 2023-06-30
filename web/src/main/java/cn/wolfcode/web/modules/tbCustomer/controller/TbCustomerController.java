@@ -81,7 +81,6 @@ public class TbCustomerController extends BaseController {
                 .like(!StringUtils.isEmpty(parameterName), TbCustomer::getLegalLeader, parameterName)
                 .or()
                 .eq(!StringUtils.isEmpty(openStatus), TbCustomer::getOpenStatus, openStatus)
-                .or()
                 .eq(!StringUtils.isEmpty(province), TbCustomer::getProvince, province);
 
         //把省份的信息由地区编码（数字）改成地区名称

@@ -91,6 +91,10 @@
 
                     <script type="text/html" id="List-editBar">
                         <@sec.authenticate grants="app:tbContract:update">
+                            <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="pass"><i
+                                        class="layui-icon">&#xe642;</i>通过审核</a>
+                        </@sec.authenticate>
+                        <@sec.authenticate grants="app:tbContract:update">
                             <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="update"><i
                                         class="layui-icon">&#xe642;</i>修改</a>
                         </@sec.authenticate>
