@@ -64,6 +64,10 @@
                             <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="ship"><i
                                         class="layui-icon">&#xe642;</i>发货</a>
                         </@sec.authenticate>
+                        <@sec.authenticate grants="app:tbContract:update">
+                            <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="reword"><i
+                                        class="layui-icon">&#xe642;</i>收货</a>
+                        </@sec.authenticate>
                         <@sec.authenticate grants="app:orderInfo:update">
                             <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="update"><i
                                         class="layui-icon">&#xe642;</i>修改</a>

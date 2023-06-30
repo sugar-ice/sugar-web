@@ -1,9 +1,17 @@
-layui.use(['form', 'layer'], function () {
+layui.use(['form', 'layer', 'laydate'], function () {
     var form = layui.form,
         layer = layui.layer,
+        laydate = layui.laydate,
         $ = layui.jquery;
 
-
+    laydate.render({
+        elem: '#startDate',
+        trigger: 'click'
+    })
+    laydate.render({
+        elem: '#endDate',
+        trigger: 'click'
+    })
     form.on('submit(Add-filter)', function (data) {
         $.ajax({
             url: web.rootPath() + "tbContract/update",

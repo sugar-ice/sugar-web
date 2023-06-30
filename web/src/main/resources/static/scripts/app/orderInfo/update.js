@@ -1,8 +1,18 @@
-layui.use(['form', 'layer'], function () {
+layui.use(['form', 'layer', 'laydate'], function () {
     var form = layui.form,
         layer = layui.layer,
+        laydate = layui.laydate,
         $ = layui.jquery;
 
+    laydate.render({
+        elem: '#deliverTime',
+        trigger: 'click'
+    })
+
+    laydate.render({
+        elem: '#receiveTime',
+        trigger: 'click'
+    })
 
     form.on('submit(Add-filter)', function (data) {
         $.ajax({

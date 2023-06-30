@@ -43,9 +43,32 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             {field: 'logisticsCode', title: '物流单号', minWidth: 100, align: "center"},
             {field: 'deliverTime', title: '发货时间', minWidth: 100, align: "center"},
             {field: 'receiveTime', title: '收货时间', minWidth: 100, align: "center"},
-            {title: '操作', width: 240, templet: '#List-editBar', fixed: "right", align: "center"}
+            {title: '操作', width: 320, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
-
+        //渲染完成后的回调函数
+        done: function (res, curr, count) {
+            //遍历每条数据
+            for (var i = 0; i < res.data.length; i++) {
+                if (res.data[i].status == 0) {
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="reword"]').addClass('layui-btn-disabled').off('click');
+                }
+                if (res.data[i].status == 1) {
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="ship"]').addClass('layui-btn-disabled').off('click');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="update"]').addClass('layui-btn-disabled').off('click');
+                }
+                if (res.data[i].status == 2) {
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="ship"]').addClass('layui-btn-disabled').off('click');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="update"]').addClass('layui-btn-disabled').off('click');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="reword"]').addClass('layui-btn-disabled').off('click');
+                }
+            }
+        }
     });
 
     //头工具栏事件
@@ -144,6 +167,28 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 break;
             case 'ship':
                 data.status = 1
+                $.ajax({
+                    url: web.rootPath() + "orderInfo/update",
+                    contentType: "application/json",
+                    type: "put",
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data)
+                        layer.msg("操作成功", {
+                            icon: 1,
+                            success: function () {
+                                reloadTb("Update-frame", "#SearchBtn");
+                            }
+                        });
+                    },
+                    error: function (e) {
+                        layer.msg(e.responseJSON.message, {icon: 2});
+                    }
+                })
+                break;
+            case 'reword':
+                data.status = 2
                 $.ajax({
                     url: web.rootPath() + "orderInfo/update",
                     contentType: "application/json",
