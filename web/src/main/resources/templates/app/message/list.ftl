@@ -25,7 +25,7 @@
                           id="searchForm">
                         <div class="layui-form-item">
                             <div class="layui-inline">
-                                <label class="layui-form-label">参数</label>
+                                <label class="layui-form-label">标题</label>
                                 <div class="layui-input-block input-box">
                                     <input type="text" name="parameterName" placeholder="请输入"
                                            autocomplete="off"

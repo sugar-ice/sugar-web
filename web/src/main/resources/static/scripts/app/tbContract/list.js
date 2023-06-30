@@ -73,7 +73,6 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             {field: 'username', title: '录入人', minWidth: 100, align: "center"},
             {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
             {field: 'updateTime', title: '修改时间', minWidth: 100, align: "center"},
-
             {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
 
@@ -105,7 +104,7 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             //表格重载
             tableIns.reload({
                 where: { //设定异步数据接口的额外参数，任意设
-                    parameterName: parameterName
+                    parameterName: parameterName,
                 }
             });
         }

@@ -5,7 +5,7 @@ layui.use(['form', 'layer', 'laydate'], function () {
         $ = layui.jquery;
 
     laydate.render({
-        elem: '#registerDate',
+        elem: '#visitDate',
         trigger: 'click'
     })
     form.on('submit(Add-filter)', function (data) {

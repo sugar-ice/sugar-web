@@ -73,10 +73,14 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         reload: function () {
             //获取搜索条件值
             var parameterName = $("#searchForm").find("input[name='parameterName']").val().trim();
+            var openStatus = $("#searchForm").find("select[name='openStatus']").val().trim();
+            var province = $("#searchForm").find("select[name='province']").val().trim();
             //表格重载
             tableIns.reload({
                 where: { //设定异步数据接口的额外参数，任意设
-                    parameterName: parameterName
+                    parameterName: parameterName,
+                    openStatus: openStatus,
+                    province: province
                 }
             });
         }

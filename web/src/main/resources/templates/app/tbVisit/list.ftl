@@ -22,7 +22,7 @@
 
                     <!-- 搜索条件start -->
                     <form class="layui-form layui-card-header layuiadmin-card-header-auto"
-                         id="searchForm">
+                          id="searchForm">
                         <div class="layui-form-item">
                             <div class="layui-inline">
                                 <label class="layui-form-label">参数</label>
@@ -32,7 +32,16 @@
                                            class="layui-input">
                                 </div>
                             </div>
-
+                            <div class="layui-inline">
+                                <label class="layui-form-label">拜访方式</label>
+                                <div class="layui-input-block">
+                                    <select name="visitType">
+                                        <option value="">--请选择--</option>
+                                        <option value="2">电话拜访</option>
+                                        <option value="1">上门拜访</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="layui-inline">
                                 <button type="button" class="layui-btn layui-btn-normal" id="SearchBtn"
                                         data-type="reload">搜索

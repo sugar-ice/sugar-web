@@ -75,7 +75,7 @@ public class TbVisitController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:tbVisit:list')")
-    public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
+    public ResponseEntity page(LayuiPage layuiPage, String parameterName, String visitType) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
         MPJLambdaWrapper<TbVisit> wrapper = new MPJLambdaWrapper<TbVisit>()
                 .selectAll(TbVisitWithLinkman.class)
@@ -87,7 +87,9 @@ public class TbVisitController extends BaseController {
                 .leftJoin(SysUser.class, SysUser::getUserId, TbVisit::getInputUser)
                 .like(!StringUtils.isEmpty(parameterName), TbCustLinkman::getLinkman, parameterName)
                 .or()
-                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName);
+                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName)
+                .or()
+                .like(!StringUtils.isEmpty(visitType), TbVisit::getVisitType, visitType);
         IPage<TbVisitWithLinkman> page = entityService.getTbVisitWithLinkman(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }

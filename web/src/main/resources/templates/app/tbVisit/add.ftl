@@ -40,10 +40,9 @@
                     <div class="layui-input-block">
                         <select name="visitType">
                             <option value="">--请选择--</option>
-                            <option value="1">电话拜访</option>
-                            <option value="2">上门拜访</option>
+                            <option value="2">电话拜访</option>
+                            <option value="1">上门拜访</option>
                         </select>
-                        <input type="text" name="visitType" placeholder="请输入" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-col-lg6" style="margin-top: 10px">

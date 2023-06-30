@@ -44,8 +44,10 @@ public class TbCustomerController extends BaseController {
     private ITbCustomerService entityService;
 
     @GetMapping("/list.html")
-    public String list() {
-        return "app/tbCustomer/list";
+    public ModelAndView list(ModelAndView mv) {
+        mv.addObject("citys", CityUtils.citys);
+        mv.setViewName("app/tbCustomer/list");
+        return mv;
     }
 
     @RequestMapping("/add.html")
@@ -68,7 +70,7 @@ public class TbCustomerController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:tbCustomer:list')")
-    public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
+    public ResponseEntity page(LayuiPage layuiPage, String parameterName, String openStatus, String province) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
         MPJLambdaWrapper<TbCustomer> wrapper = new MPJLambdaWrapper<TbCustomer>()
                 .selectAll(TbCustomer.class)
@@ -76,7 +78,11 @@ public class TbCustomerController extends BaseController {
                 .leftJoin(SysUser.class, SysUser::getUserId, TbCustomer::getInputUserId)
                 .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName)
                 .or()
-                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getLegalLeader, parameterName);
+                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getLegalLeader, parameterName)
+                .or()
+                .eq(!StringUtils.isEmpty(openStatus), TbCustomer::getOpenStatus, openStatus)
+                .or()
+                .eq(!StringUtils.isEmpty(province), TbCustomer::getProvince, province);
 
         //把省份的信息由地区编码（数字）改成地区名称
         IPage<TbCustomerWithUser> page = entityService.getCustomerWithUser(layuiPage, wrapper);

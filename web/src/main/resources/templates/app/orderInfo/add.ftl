@@ -50,11 +50,11 @@
                 <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">状态</label>
                     <div class="layui-input-block">
-                        <select name="custId">
+                        <select name="status">
                             <option value="">--请选择--</option>
                             <option value="0">未发货</option>
-                            <option value="0">已发货</option>
-                            <option value="0">已收获</option>
+                            <option value="1">已发货</option>
+                            <option value="2">已收获</option>
                         </select>
                     </div>
                 </div>

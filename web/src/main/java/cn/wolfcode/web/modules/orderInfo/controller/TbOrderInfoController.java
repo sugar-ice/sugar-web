@@ -70,8 +70,9 @@ public class TbOrderInfoController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:orderInfo:list')")
-    public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
+    public ResponseEntity page(LayuiPage layuiPage, String parameterName, String status) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
+        System.out.println(status);
         MPJLambdaWrapper<TbOrderInfo> wrapper = new MPJLambdaWrapper<TbOrderInfo>()
                 .selectAll(TbOrderInfo.class)
                 .select(TbCustomer::getCustomerName)
@@ -80,7 +81,9 @@ public class TbOrderInfoController extends BaseController {
                 .or()
                 .like(!StringUtils.isEmpty(parameterName), TbOrderInfo::getProdName, parameterName)
                 .or()
-                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getInputTime, parameterName);
+                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getInputTime, parameterName)
+                .or()
+                .eq(!StringUtils.isEmpty(status), TbOrderInfo::getStatus, status);
         IPage<TbOrderInfoWithCust> page = entityService.getTbOrderInfoWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }

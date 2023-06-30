@@ -73,7 +73,7 @@ public class TbCustLinkmanController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:custLinkman:list')")
-    public ResponseEntity page(LayuiPage layuiPage, String parameterName) {
+    public ResponseEntity page(LayuiPage layuiPage, String parameterName, String sex) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
         MPJLambdaWrapper<TbCustLinkman> wrapper = new MPJLambdaWrapper<TbCustLinkman>()
                 .selectAll(TbCustLinkman.class)
@@ -81,7 +81,9 @@ public class TbCustLinkmanController extends BaseController {
                 .select(SysUser::getUsername)
                 .leftJoin(TbCustomer.class, TbCustomer::getId, TbCustLinkman::getCustId)
                 .leftJoin(SysUser.class, SysUser::getUserId, TbCustLinkman::getInputUser)
-                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName);
+                .like(!StringUtils.isEmpty(parameterName), TbCustomer::getCustomerName, parameterName)
+                .or()
+                .eq(!StringUtils.isEmpty(sex), TbCustLinkman::getSex, sex);
         IPage<TbCustLinkmanWithCust> page = entityService.getCustLinkmanWithCust(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }

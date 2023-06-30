@@ -41,7 +41,6 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
             {field: 'remark', title: '备注信息', minWidth: 100, align: "center"},
             {field: 'username', title: '录入人', minWidth: 100, align: "center"},
             {field: 'inputTime', title: '录入时间', minWidth: 100, align: "center"},
-
             {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
 
@@ -70,10 +69,12 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         reload: function () {
             //获取搜索条件值
             var parameterName = $("#searchForm").find("input[name='parameterName']").val().trim();
+            var sex = $("#searchForm").find("select[name='sex']").val().trim();
             //表格重载
             tableIns.reload({
                 where: { //设定异步数据接口的额外参数，任意设
-                    parameterName: parameterName
+                    parameterName: parameterName,
+                    sex: sex
                 }
             });
         }

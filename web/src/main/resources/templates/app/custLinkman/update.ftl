@@ -50,8 +50,8 @@
                     <label class="layui-form-label">性别</label>
                     <div class="layui-input-block">
                         <select name="sex">
-                            <option value="0">男</option>
-                            <option value="1">女</option>
+                            <option value="1">男</option>
+                            <option value="0">女</option>
                         </select>
                     </div>
                 </div>
