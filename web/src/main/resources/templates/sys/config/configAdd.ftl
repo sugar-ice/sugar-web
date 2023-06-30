@@ -44,8 +44,7 @@
                autocomplete="off" class="layui-input">
     </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">配置的属性</label>
 <div class="layui-input-block">
     <input type="text" id="configValue" name="configValue" lay-verify="configValue" placeholder="配置的属性值"

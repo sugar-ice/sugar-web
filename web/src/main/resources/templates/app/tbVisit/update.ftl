@@ -60,8 +60,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">拜访原因</label>
 <div class="layui-input-block">
     <input type="text"
@@ -73,8 +72,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">交流内容</label>
 <div class="layui-input-block">
     <input type="text"
@@ -86,8 +84,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">拜访时间</label>
 <div class="layui-input-block">
     <input type="text"
@@ -99,8 +96,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">录入人</label>
 <div class="layui-input-block">
     <input type="text"
@@ -112,8 +108,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">录入时间</label>
 <div class="layui-input-block">
     <input type="text"

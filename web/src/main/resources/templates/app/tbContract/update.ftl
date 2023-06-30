@@ -61,8 +61,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同编码</label>
 <div class="layui-input-block">
     <input type="text"
@@ -74,8 +73,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同金额</label>
 <div class="layui-input-block">
     <input type="text"
@@ -87,8 +85,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同生效开始时间</label>
 <div class="layui-input-block">
     <input type="text"
@@ -100,8 +97,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同生效结束时间</label>
 <div class="layui-input-block">
     <input type="text"
@@ -113,8 +109,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同内容</label>
 <div class="layui-input-block">
     <input type="text"
@@ -126,8 +121,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">是否盖章确认 0 否 1 是</label>
 <div class="layui-input-block">
     <input type="text"
@@ -139,8 +133,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">审核状态 0 未审核 1 审核通过 -1 审核不通过</label>
 <div class="layui-input-block">
     <input type="text"
@@ -152,8 +145,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">是否作废 1 作废 0 在用</label>
 <div class="layui-input-block">
     <input type="text"
@@ -165,8 +157,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">录入人</label>
 <div class="layui-input-block">
     <input type="text"
@@ -178,8 +169,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">录入时间</label>
 <div class="layui-input-block">
     <input type="text"
@@ -191,8 +181,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">修改时间</label>
 <div class="layui-input-block">
     <input type="text"

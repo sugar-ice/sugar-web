@@ -47,37 +47,32 @@
         </select>
     </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">年龄</label>
 <div class="layui-input-block">
     <input type="text" name="age" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">联系人电话</label>
 <div class="layui-input-block">
     <input type="text" name="phone" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">职位</label>
 <div class="layui-input-block">
     <input type="text" name="position" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">部门</label>
 <div class="layui-input-block">
     <input type="text" name="department" placeholder="请输入" autocomplete="off"
            class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">备注信息</label>
 <div class="layui-input-block">
     <input type="text" name="remark" placeholder="请输入" autocomplete="off" class="layui-input">

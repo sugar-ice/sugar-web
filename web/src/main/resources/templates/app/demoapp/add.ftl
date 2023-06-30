@@ -46,15 +46,13 @@
         <input type="text" name="info" placeholder="请输入" autocomplete="off" class="layui-input">
     </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">age</label>
 <div class="layui-input-block">
     <input type="text" name="age" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">desc</label>
 <div class="layui-input-block">
     <input type="text" name="desc" placeholder="请输入" autocomplete="off" class="layui-input">

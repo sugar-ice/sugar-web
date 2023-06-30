@@ -44,15 +44,13 @@
         <input type="text" name="amounts" placeholder="请输入" autocomplete="off" class="layui-input">
     </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">产品价格</label>
 <div class="layui-input-block">
     <input type="text" name="price" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">状态 0 未发货 1 已发货 2 已收货</label>
 <div class="layui-input-block">
     <select name="custId">
@@ -62,52 +60,45 @@
     </select>
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">收货人</label>
 <div class="layui-input-block">
     <input type="text" name="receiver" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">收货人电话</label>
 <div class="layui-input-block">
     <input type="text" name="linkPhone" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">收货地址</label>
 <div class="layui-input-block">
     <input type="text" name="address" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">物流</label>
 <div class="layui-input-block">
     <input type="text" name="logistcs" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">物流单号</label>
 <div class="layui-input-block">
     <input type="text" name="logisticsCode" placeholder="请输入" autocomplete="off"
            class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">发货时间</label>
 <div class="layui-input-block">
     <input type="text" name="deliverTime" placeholder="请输入" autocomplete="off"
            class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">收货时间</label>
 <div class="layui-input-block">
     <input type="text" name="receiveTime" placeholder="请输入" autocomplete="off"

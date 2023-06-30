@@ -42,36 +42,31 @@
                class="layui-input">
     </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同金额</label>
 <div class="layui-input-block">
     <input type="text" name="amounts" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同生效开始时间</label>
 <div class="layui-input-block">
     <input type="text" name="startDate" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同生效结束时间</label>
 <div class="layui-input-block">
     <input type="text" name="endDate" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">合同内容</label>
 <div class="layui-input-block">
     <input type="text" name="content" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">是否盖章确认 0 否 1 是</label>
 <div class="layui-input-block">
     <input type="text" name="affixSealStatus" placeholder="请输入" autocomplete="off"
@@ -84,8 +79,7 @@
     </select>
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">审核状态 0 未审核 1 审核通过 -1 审核不通过</label>
 <div class="layui-input-block">
     <select name="auditStatus">
@@ -95,8 +89,7 @@
     </select>
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">是否作废 1 作废 0 在用</label>
 <div class="layui-input-block">
     <select name="nullifyStatus">

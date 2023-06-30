@@ -73,8 +73,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">age</label>
 <div class="layui-input-block">
     <input type="text"
@@ -86,8 +85,7 @@
 </div>
 
 
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">desc</label>
 <div class="layui-input-block">
     <input type="text"

@@ -40,78 +40,67 @@
         <input type="text" name="disable" placeholder="请输入" autocomplete="off" class="layui-input">
     </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">更新时间</label>
 <div class="layui-input-block">
     <input type="text" name="updateTime" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">文件key</label>
 <div class="layui-input-block">
     <input type="text" name="fileKey" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">高度</label>
 <div class="layui-input-block">
     <input type="text" name="height" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">文件头类型</label>
 <div class="layui-input-block">
     <input type="text" name="mediaType" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">名称</label>
 <div class="layui-input-block">
     <input type="text" name="name" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">路径</label>
 <div class="layui-input-block">
     <input type="text" name="path" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">大小</label>
 <div class="layui-input-block">
     <input type="text" name="fileSize" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">后缀</label>
 <div class="layui-input-block">
     <input type="text" name="suffix" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">压缩路径</label>
 <div class="layui-input-block">
     <input type="text" name="thumbPath" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">类型</label>
 <div class="layui-input-block">
     <input type="text" name="fileType" placeholder="请输入" autocomplete="off" class="layui-input">
 </div>
 </div>
-<class
-="layui-col-lg6">
+<div class="layui-col-lg6" style="margin-top: 10px">
 <label class="layui-form-label">宽度</label>
 <div class="layui-input-block">
     <input type="text" name="width" placeholder="请输入" autocomplete="off" class="layui-input">
