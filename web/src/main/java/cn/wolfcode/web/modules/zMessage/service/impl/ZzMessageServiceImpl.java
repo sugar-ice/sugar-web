@@ -2,7 +2,7 @@ package cn.wolfcode.web.modules.zMessage.service.impl;
 
 import cn.wolfcode.web.commons.entity.LayuiPage;
 import cn.wolfcode.web.modules.zMessage.entity.ZzMessage;
-import cn.wolfcode.web.modules.zMessage.entity.ZzMessagePerUser;
+import cn.wolfcode.web.modules.zMessage.entity.ZzMessagePerUserDetail;
 import cn.wolfcode.web.modules.zMessage.entity.ZzMessageWithName;
 import cn.wolfcode.web.modules.zMessage.mapper.ZzMessageMapper;
 import cn.wolfcode.web.modules.zMessage.service.IZzMessageService;
@@ -29,9 +29,9 @@ public class ZzMessageServiceImpl extends ServiceImpl<ZzMessageMapper, ZzMessage
     }
 
     @Override
-    public IPage<ZzMessagePerUser> findZzMessagePerUserPage(LayuiPage layuiPage, MPJLambdaWrapper<ZzMessage> wrapper) {
-        IPage<ZzMessagePerUser> iPage = zzMessageMapper.selectJoinPage(new Page<>(layuiPage.getPage(), layuiPage.getLimit()),
-                ZzMessagePerUser.class,
+    public IPage<ZzMessagePerUserDetail> findZzMessagePerUserPage(LayuiPage layuiPage, MPJLambdaWrapper<ZzMessage> wrapper) {
+        IPage<ZzMessagePerUserDetail> iPage = zzMessageMapper.selectJoinPage(new Page<>(layuiPage.getPage(), layuiPage.getLimit()),
+                ZzMessagePerUserDetail.class,
                 wrapper);
         return iPage;
     }
@@ -43,4 +43,6 @@ public class ZzMessageServiceImpl extends ServiceImpl<ZzMessageMapper, ZzMessage
                 wrapper);
         return iPage;
     }
+
+
 }

@@ -21,64 +21,67 @@
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">消息标题</label>
                     <div class="layui-input-block">
-                        <input type="text"  name="messageTitle"  placeholder="请输入"  autocomplete="off" class="layui-input">
+                        <input type="text" name="messageTitle" placeholder="请输入" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6" style="margin-top: 10px">
-                    <label class="layui-form-label">消息类型</label>
-                    <div class="layui-input-block">
-                        <select name="sex">
-                            <option value="0">系统消息</option>
-                            <option value="1">用户消息</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">消息接收人</label>
-                    <div class="layui-input-block">
-                        <select name="province">
-                            <option value= "">--请选择--</option>
-                            <#list receipts as receipt>
-                                <option value="${receipt.id}">${receipt.user_name}</option>
-                            </#list>
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">消息详情</label>
-                    <div class="layui-input-block">
-                        <input type="text"  name="messageContent"  placeholder="请输入"  autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-col-lg6">
-                    <label class="layui-form-label">置顶优先级</label>
-                    <div class="layui-input-block">
-                        <select name="priority">
-                            <option value="">--请选择--(优先级越大越靠前)</option>
-                            <#list 0..10 as priority>
-                                <#if priority == 0>
-                                    <option value="${priority}">不置顶</option>
-                                <#else>
-                                    <option value="${priority}">${priority}</option>
-                                </#if>
-                            </#list>
-                        </select>
-                    </div>
-                </div>
-
-
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="Add-filter">修改</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
+                <class
+                ="layui-col-lg6">
+                <label class="layui-form-label">消息类型</label>
+                <div class="layui-input-block">
+                    <select name="sex">
+                        <option value="0">系统消息</option>
+                        <option value="1">用户消息</option>
+                    </select>
                 </div>
             </div>
-        </form>
+            <div class="layui-col-lg6" style="margin-top: 10px">
+                <label class="layui-form-label">消息接收人</label>
+                <div class="layui-input-block">
+                    <select name="province">
+                        <option value="">--请选择--</option>
+                        <#list receipts as receipt>
+                            <option value="${receipt.id}">${receipt.user_name}</option>
+                        </#list>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-col-lg6" style="margin-top: 10px">
+                <label class="layui-form-label">消息详情</label>
+                <div class="layui-input-block">
+                    <input type="text" name="messageContent" placeholder="请输入" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-col-lg6" style="margin-top: 10px">
+                <label class="layui-form-label">置顶优先级</label>
+                <div class="layui-input-block">
+                    <select name="priority">
+                        <option value="">--请选择--(优先级越大越靠前)</option>
+                        <#list 0..10 as priority>
+                            <#if priority == 0>
+                                <option value="${priority}">不置顶</option>
+                            <#else>
+                                <option value="${priority}">${priority}</option>
+                            </#if>
+                        </#list>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-normal" lay-submit lay-filter="Add-filter">修改</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
     </div>
+    </form>
+</div>
 </div>
 
 <script src="${request.contextPath}/layuiadmin/layui/layui.js"></script>

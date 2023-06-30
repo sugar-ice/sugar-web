@@ -22,14 +22,14 @@
             <div class="layui-row layui-col-space10 layui-form-item">
 
 
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">消息标题</label>
                     <div class="layui-input-block">
                         <input type="text" name="messageTitle" placeholder="请输入" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">消息类型</label>
                     <div class="layui-input-block">
                         <select name="messageType">
@@ -38,7 +38,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">消息接收人</label>
                     <div class="layui-input-block">
                         <select name="receiverId">
@@ -49,14 +49,14 @@
                         </select>
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">消息详情</label>
                     <div class="layui-input-block">
                         <input type="text" name="messageContent" placeholder="请输入" autocomplete="off"
                                class="layui-input">
                     </div>
                 </div>
-                <div class="layui-col-lg6">
+                <div class="layui-col-lg6" style="margin-top: 10px">
                     <label class="layui-form-label">置顶优先级</label>
                     <div class="layui-input-block">
                         <select name="topPriority">

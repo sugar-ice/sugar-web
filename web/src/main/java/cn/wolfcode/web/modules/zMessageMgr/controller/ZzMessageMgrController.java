@@ -9,7 +9,7 @@ import cn.wolfcode.web.modules.sys.entity.SysUser;
 import cn.wolfcode.web.modules.sys.form.LoginForm;
 import cn.wolfcode.web.modules.sys.service.UserService;
 import cn.wolfcode.web.modules.zMessage.entity.ZzMessage;
-import cn.wolfcode.web.modules.zMessage.entity.ZzMessagePerUser;
+import cn.wolfcode.web.modules.zMessage.entity.ZzMessagePerUserDetail;
 import cn.wolfcode.web.modules.zMessage.entity.ZzMessageWithName;
 import cn.wolfcode.web.modules.zMessage.service.IZzMessageService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -20,6 +20,7 @@ import link.ahsj.core.annotations.SysLog;
 import link.ahsj.core.annotations.UpdateGroup;
 import link.ahsj.core.entitys.ApiModel;
 import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -77,7 +78,7 @@ public class ZzMessageMgrController extends BaseController {
 
     @RequestMapping("list")
     @PreAuthorize("hasAuthority('app:messageMgr:list')")
-    public ResponseEntity page(LayuiPage layuiPage, @RequestParam(value = "title", required = false) String title,
+    public ResponseEntity page(LayuiPage layuiPage, @RequestParam(value = "parameterName", required = false) String parameterName,
                                @RequestParam(value = "startTime", required = false) String startTimeStr,
                                @RequestParam(value = "endTime", required = false) String endTimeStr) {
         SystemCheckUtils.getInstance().checkMaxPage(layuiPage);
@@ -89,7 +90,9 @@ public class ZzMessageMgrController extends BaseController {
                 .selectAs(SysUser::getUsername, "publisher_username")
                 .selectAs(SysUser::getUsername, "receiver_username")
                 .leftJoin(SysUser.class, SysUser::getUserId, ZzMessage::getPublisherId)
-                .leftJoin(SysUser.class, SysUser::getUserId, ZzMessage::getReceiverId);
+                .leftJoin(SysUser.class, SysUser::getUserId, ZzMessage::getReceiverId)
+                .like(!StringUtils.isEmpty(parameterName), ZzMessage::getMessageTitle, parameterName);
+//                .between(startTime != null && endTime != null, ZzMessage::getPublishTime, startTime, endTime);
         IPage<ZzMessageWithName> page = entityService.findZzMessageWithNameMapper(layuiPage, wrapper);
         return ResponseEntity.ok(LayuiTools.toLayuiTableModel(page));
     }
@@ -98,7 +101,7 @@ public class ZzMessageMgrController extends BaseController {
     @PostMapping("save")
     @SysLog(value = LogModules.SAVE, module = LogModule)
     @PreAuthorize("hasAuthority('app:messageMgr:add')")
-    public ResponseEntity<ApiModel> save(HttpServletRequest request, @Validated({AddGroup.class}) @RequestBody ZzMessagePerUser entity) {
+    public ResponseEntity<ApiModel> save(HttpServletRequest request, @Validated({AddGroup.class}) @RequestBody ZzMessagePerUserDetail entity) {
         SysUser user = (SysUser) request.getSession().getAttribute(LoginForm.LOGIN_USER_KEY);
         entity.setPublisherId(user.getUserId());
         entity.setPublishTime(LocalDateTime.now());
@@ -110,7 +113,7 @@ public class ZzMessageMgrController extends BaseController {
     @SysLog(value = LogModules.UPDATE, module = LogModule)
     @PutMapping("update")
     @PreAuthorize("hasAuthority('app:messageMgr:update')")
-    public ResponseEntity<ApiModel> update(@Validated({UpdateGroup.class}) @RequestBody ZzMessagePerUser entity) {
+    public ResponseEntity<ApiModel> update(@Validated({UpdateGroup.class}) @RequestBody ZzMessagePerUserDetail entity) {
         entityService.updateById(entity);
         return ResponseEntity.ok(ApiModel.ok());
     }

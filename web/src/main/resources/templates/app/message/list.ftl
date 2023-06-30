@@ -22,7 +22,7 @@
 
                     <!-- 搜索条件start -->
                     <form class="layui-form layui-card-header layuiadmin-card-header-auto"
-                         id="searchForm">
+                          id="searchForm">
                         <div class="layui-form-item">
                             <div class="layui-inline">
                                 <label class="layui-form-label">参数</label>
@@ -48,16 +48,6 @@
                 <!-- 数据表格start -->
                 <div class="layui-card-body">
                     <table class="layui-hide" id="List" lay-filter="List-toolbar"></table>
-
-                    <script type="text/html" id="List-toolbar">
-                        <div class="layui-btn-container">
-                            <@sec.authenticate grants="app:message:add">
-                                <button class="layui-btn layui-btn-sm layui-btn-primary"
-                                        lay-event="add"><i class="layui-icon">&#xe654;</i>新增
-                                </button>
-                            </@sec.authenticate>
-                        </div>
-                    </script>
 
                     <script type="text/html" id="List-editBar">
                         <@sec.authenticate grants="app:message:update">

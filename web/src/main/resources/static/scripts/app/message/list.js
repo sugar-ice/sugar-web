@@ -20,110 +20,85 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
         id: "ListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-            {field: 'id', title: 'id', minWidth: 100, align: "center"},
             {field: 'messageTitle', title: '消息标题', minWidth: 100, align: "center"},
-            {field: 'messageType', title: '消息类型', minWidth: 100, align: "center"},
+            {
+                field: 'messageType', title: '消息类型', minWidth: 100, align: "center", templet: function (data) {
+                    var value = data.messageType;
+                    var text = '';
+                    if (value == '0') {
+                        text = '系统消息';
+                    } else if (value == '1') {
+                        text = '用户消息';
+                    }
+                    return text;
+                }
+            },
             {field: 'publishTime', title: '消息发布时间', minWidth: 100, align: "center"},
-            {field: 'publisherId', title: '消息发布人', minWidth: 100, align: "center"},
+            {field: 'publisherUsername', title: '消息发布人', minWidth: 100, align: "center"},
+            {
+                field: 'topPriority', title: '重要性', minWidth: 100, align: "center", templet: function (data) {
+                    var value = data.topPriority;
+                    var text = '';
+                    if (value == '0') {
+                        text = '一般';
+                    } else {
+                        var starCount = parseInt(value); // 将重要性值转换为整数
+                        for (var i = 0; i < starCount; i++) {
+                            text += '<i class="layui-icon layui-icon-star-fill"></i>'; // 添加图标
+                        }
+                    }
+                    return text;
+                }
+            },
 
-            {title: '操作', width: 160, templet: '#List-editBar', fixed: "right", align: "center"}
+            {title: '操作', width: 240, templet: '#List-editBar', fixed: "right", align: "center"}
         ]],
         //对返回的数据进行处理
         parseData: function (res) {
-            //遍历每条数据
-            for (var i = 0; i < res.data.length; i++) {
-                //如果messageType为1，修改为系统消息
-                if (res.data[i].messageType == 1) {
-                    res.data[i].messageType = "系统消息";
-                } else {
-                    //否则修改为用户消息
-                    res.data[i].messageType = "用户消息";
-                }
-            }
-            //返回处理后的数据
-            return res;
+            // //遍历每条数据
+            // for (var i = 0; i < res.data.length; i++) {
+            //     //如果messageType为1，修改为系统消息
+            //     if (res.data[i].messageType == 1) {
+            //         res.data[i].messageType = "系统消息";
+            //     } else {
+            //         //否则修改为用户消息
+            //         res.data[i].messageType = "用户消息";
+            //     }
+            // }
+            // //返回处理后的数据
+            // return res;
         },
 
         //渲染完成后的回调函数
         done: function (res, curr, count) {
             //遍历每条数据
             for (var i = 0; i < res.data.length; i++) {
-                //如果isRead为0，修改行的背景色为黄色
-                if (res.data[i].isRead == 0) {
-                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', 'yellow');
+                if (res.data[i].isRead == 1) {
+                    $('.layui-table').find('tr[data-index="' + i + '"]').css('background-color', '#cccccc');
+                    $('.layui-table').find('tr[data-index="' + i + '"]').find('.layui-btn[lay-event="read"]').addClass('layui-btn-disabled').off('click');
                 }
             }
         }
     });
 
-    //头工具栏事件
-    table.on('toolbar(List-toolbar)', function (obj) {
-        switch (obj.event) {
-            case 'add':
-                layer.msg("add");
-                break;
-            case 'update':
-                layer.msg("update");
-                break;
-            case 'delete':
-                layer.msg("delete");
-                break;
-            case 'export':
-                layer.msg("export");
-                break;
-        }
-        ;
-    });
-
-    var $ = layui.$, active = {
-        reload: function () {
-            //获取搜索条件值
-            var parameterName = $("#searchForm").find("input[name='parameterName']").val().trim();
-            //表格重载
-            tableIns.reload({
-                where: { //设定异步数据接口的额外参数，任意设
-                    parameterName: parameterName
-                }
-            });
-        }
-    };
-
-    $('#SearchBtn').on('click', function () {
-        var type = $(this).data('type');
-        active[type] ? active[type].call(this) : '';
-    });
-
-
-    //头工具栏事件
-    table.on('toolbar(List-toolbar)', function (obj) {
-        if (obj.event == 'add') {
-            layer.open({
-                id: "Save-frame",
-                type: 2,
-                area: ['600px', '501px'],
-                title: '新增',
-                fixed: false,
-                maxmin: true,
-                content: web.rootPath() + 'message/add.html'
-            });
-        }
-        ;
-    });
     //监听工具条
     table.on('tool(List-toolbar)', function (obj) {
         var data = obj.data;
         switch (obj.event) {
-            case 'update':
-                layer.open({
-                    id: "Update-frame",
-                    type: 2,
-                    resize: false,
-                    area: ['550px', '500px'],
-                    title: '修改',
-                    fixed: false,
-                    maxmin: true,
-                    content: web.rootPath() + "message/" + data.id + ".html?_"
-                });
+            case 'read':
+                $.ajax({
+                    url: web.rootPath() + "message/read/" + data.id,
+                    type: "post",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(data.field),
+                    dataType: 'json',
+                    success: function (data) {
+                        tableIns.reload({});
+                    },
+                    error: function (e) {
+                        layer.msg(e.responseJSON.message, {icon: 2});
+                    }
+                })
                 break;
             case 'delete':
                 var index = layer.confirm('确定要删除?', {
@@ -139,7 +114,7 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                             layer.msg("操作成功", {
                                 icon: 1,
                                 success: function () {
-                                    $('#SearchBtn').trigger("click");
+                                    tableIns.reload({});
                                 }
                             });
                         },
@@ -151,8 +126,29 @@ layui.use(['form', 'layer', 'table', 'laytpl', 'laydate'], function () {
                 });
                 break;
             case 'view':
-                break;
+                // Retrieve the message content from the data object
+                var messageTitle = data.messageTitle;
+                var messageType = data.messageType;
+                var publishTime = data.publishTime;
+                var publisherUsername = data.publisherUsername;
+                var topPriority = data.topPriority;
+                var messageContent = data.messageContent;
 
+                // Create a new layer to display the message content
+                layer.open({
+                    type: 1,
+                    title: messageTitle,
+                    area: ['600px', '400px'],
+                    content: '<div style="padding: 20px; font-size: 16px;">' +
+                        '<p><strong>消息标题:</strong> ' + messageTitle + '</p>' +
+                        '<p><strong>消息类型:</strong> ' + (messageType === '0' ? '系统消息' : '用户消息') + '</p>' +
+                        '<p><strong>消息发布时间:</strong> ' + publishTime + '</p>' +
+                        '<p><strong>消息发布人:</strong> ' + publisherUsername + '</p>' +
+                        '<p><strong>重要性:</strong> ' + (topPriority === '0' ? '一般' : '<i class="layui-icon layui-icon-star-fill"></i>'.repeat(parseInt(topPriority))) + '</p>' +
+                        '<p><strong>消息内容:</strong> ' + messageContent + '</p>' +
+                        '</div>'
+                });
+                break;
         }
         ;
     });

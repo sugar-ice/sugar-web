@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 public class ZzMessageWithName extends ZzMessage {
     private String publisherUsername;
     private String receiverUsername;
+    private String messageId;
 
     @Override
     public String toString() {

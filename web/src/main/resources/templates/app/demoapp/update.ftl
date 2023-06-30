@@ -17,92 +17,97 @@
 </script>
 <div class="layui-card layui-content">
     <div class="layui-card-body">
-        <form class="layui-form"  action="" lay-filter="component-form-element">
+        <form class="layui-form" action="" lay-filter="component-form-element">
             <input type="hidden" id="id" name="id" value="${id}">
             <div class="layui-row layui-col-space10 layui-form-item">
 
 
-<#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
-<#--                        <label class="layui-form-label">id</label>-->
-<#--                    <div class="layui-input-block">-->
-<#--                        <input type="text"-->
-<#--                               name="id"-->
-<#--                               value="${obj.id}"-->
-<#--                               autocomplete="off"-->
-<#--                               class="layui-input">-->
-<#--                    </div>-->
-<#--                </div>-->
+                <#--                <div class="layui-col-lg6" style="margin-top: 10px">-->
+                <#--                        <label class="layui-form-label">id</label>-->
+                <#--                    <div class="layui-input-block">-->
+                <#--                        <input type="text"-->
+                <#--                               name="id"-->
+                <#--                               value="${obj.id}"-->
+                <#--                               autocomplete="off"-->
+                <#--                               class="layui-input">-->
+                <#--                    </div>-->
+                <#--                </div>-->
 
 
-                <div class="layui-col-lg6" style="margin-top: 10px">
-                        <label class="layui-form-label">名称</label>
-                    <div class="layui-input-block">
-                        <input type="text"
-                               name="name"
-                               value="${obj.name}"
-                               autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-
-
-                <div class="layui-col-lg6" style="margin-top: 10px">
-                        <label class="layui-form-label">创建时间</label>
-                    <div class="layui-input-block">
-                        <input type="text"
-                               name="createTime"
-                               value="${obj.createTime}"
-                               autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-
-
-                <div class="layui-col-lg6" style="margin-top: 10px">
-                        <label class="layui-form-label">描述</label>
-                    <div class="layui-input-block">
-                        <input type="text"
-                               name="info"
-                               value="${obj.info}"
-                               autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-
-
-                <div class="layui-col-lg6" style="margin-top: 10px">
-                        <label class="layui-form-label">age</label>
-                    <div class="layui-input-block">
-                        <input type="text"
-                               name="age"
-                               value="${obj.age}"
-                               autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-
-
-                <div class="layui-col-lg6" style="margin-top: 10px">
-                        <label class="layui-form-label">desc</label>
-                    <div class="layui-input-block">
-                        <input type="text"
-                               name="desc"
-                               value="${obj.desc}"
-                               autocomplete="off"
-                               class="layui-input">
-                    </div>
-                </div>
-
-
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="Add-filter">修改</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
+                <class
+                ="layui-col-lg6">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-block">
+                    <input type="text"
+                           name="name"
+                           value="${obj.name}"
+                           autocomplete="off"
+                           class="layui-input">
                 </div>
             </div>
-        </form>
+
+
+            <class
+            ="layui-col-lg6">
+            <label class="layui-form-label">创建时间</label>
+            <div class="layui-input-block">
+                <input type="text"
+                       name="createTime"
+                       value="${obj.createTime}"
+                       autocomplete="off"
+                       class="layui-input">
+            </div>
     </div>
+
+
+    <class
+    ="layui-col-lg6">
+    <label class="layui-form-label">描述</label>
+    <div class="layui-input-block">
+        <input type="text"
+               name="info"
+               value="${obj.info}"
+               autocomplete="off"
+               class="layui-input">
+    </div>
+</div>
+
+
+<class
+="layui-col-lg6">
+<label class="layui-form-label">age</label>
+<div class="layui-input-block">
+    <input type="text"
+           name="age"
+           value="${obj.age}"
+           autocomplete="off"
+           class="layui-input">
+</div>
+</div>
+
+
+<class
+="layui-col-lg6">
+<label class="layui-form-label">desc</label>
+<div class="layui-input-block">
+    <input type="text"
+           name="desc"
+           value="${obj.desc}"
+           autocomplete="off"
+           class="layui-input">
+</div>
+</div>
+
+
+<div class="layui-form-item">
+    <div class="layui-input-block">
+        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="Add-filter">修改</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+</div>
+</div>
+</form>
+</div>
 </div>
 
 <script src="${request.contextPath}/layuiadmin/layui/layui.js"></script>

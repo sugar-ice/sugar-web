@@ -1,19 +1,28 @@
 package cn.wolfcode.web.modules.zMessage.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class ZzMessagePerUser extends ZzMessageWithName {
-    private Integer isRead;
-    private Integer isDeleted;
+public class ZzMessagePerUser implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private String id;
     private String userId;
     private String messageId;
+    private Integer isRead;
+    private Integer isDeleted;
+
+    // Getters and Setters
 
     @Override
     public String toString() {
-        return super.toString() + ", isRead=" + isRead + ", isDeleted=" + isDeleted +
-                ", userId=" + userId + ", messageId=" + messageId;
+        return "ZzMessagePerUser{" +
+                "id='" + id + '\'' +
+                ", userId='" + userId + '\'' +
+                ", messageId='" + messageId + '\'' +
+                ", isRead=" + isRead +
+                ", isDeleted=" + isDeleted +
+                '}';
     }
 }
